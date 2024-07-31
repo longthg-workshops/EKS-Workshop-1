@@ -17,7 +17,7 @@ Hãy quay lại thời điểm bắt đầu của kỷ nguyên container. Ban đ
 
 Sau đó, **Kubernetes** ngày càng phổ biến như một công cụ điều phối container và bây giờ các runtime container khác như **rkt** muốn được hỗ trợ. Vì vậy, người dùng **Kubernetes** cần nó hoạt động với các runtime container khác ngoài **Docker**. Do đó, **Kubernetes** giới thiệu một giao diện gọi là giao diện runtime container (**CRI**), cho phép bất kỳ nhà cung cấp nào hoạt động như một runtime container cho **Kubernetes** miễn là họ tuân thủ các tiêu chuẩn **OCI**. **OCI** là viết tắt của **Open Container Initiative**, bao gồm một thông số kỹ thuật hình ảnh và một thông số kỹ thuật runtime. Thông số kỹ thuật hình ảnh định nghĩa cách một hình ảnh được xây dựng. Thông số kỹ thuật runtime định nghĩa các tiêu chuẩn về cách phát triển bất kỳ runtime container nào. Với những tiêu chuẩn này, bất kỳ ai cũng có thể xây dựng một runtime container có thể được sử dụng bởi bất kỳ ai để làm việc với **Kubernetes**.
 
-![Kubernetes](/images/4/0003.png?featherlight=false&width=60pc)
+![Kubernetes](/EKS-Workshop-1/images/4/0003.png?featherlight=false&width=60pc)
 
 **Rkt** và các runtime container khác tuân thủ các tiêu chuẩn **OCI** giờ đây được hỗ trợ làm runtime container cho **Kubernetes** thông qua **CRI**. Tuy nhiên, **Docker** không được xây dựng để hỗ trợ các tiêu chuẩn **CRI**. **Docker** được xây dựng trước khi **CRI** được giới thiệu và **Docker** vẫn là công cụ container chiếm ưu thế được sử dụng nhiều nhất. Vì vậy, **Kubernetes** phải tiếp tục hỗ trợ **Docker** và do đó giới thiệu **dockershim**, một cách tạm thời nhưng không hoàn hảo để hỗ trợ **Docker** ngoài **CRI**.
 

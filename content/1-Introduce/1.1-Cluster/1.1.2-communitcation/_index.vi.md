@@ -9,7 +9,7 @@ pre: "<b> 1.1.2 </b>"
 #### **Giao tiếp giữa các Node và Control Plane**
 - Workshop này liệt kê các con đường giao tiếp giữa máy chủ API và cụm **Kubernetes**. Mục đích là để cho phép người dùng tùy chỉnh cài đặt của mình nhằm tăng cường cấu hình mạng, từ đó cụm có thể được vận hành trên một mạng không tin cậy (hoặc trên các IP công cộng hoàn toàn trên nhà cung cấp đám mây).
 
-![Kubernetes](/images/1/0001.svg?featherlight=false&width=60pc)
+![Kubernetes](/EKS-Workshop-1/images/1/0001.svg?featherlight=false&width=60pc)
 
 #### **Từ Node đến Control Plane**
 - **Kubernetes** áp dụng mô hình API "hub-and-spoke". Tất cả việc sử dụng API từ các node (hoặc các pod được chúng chạy) đều kết thúc tại máy chủ API. Không có thành phần nào khác của control plane được thiết kế để tiết lộ dịch vụ từ xa. Máy chủ API được cấu hình để lắng nghe các kết nối từ xa trên cổng HTTPS an toàn (thông thường là 443) với một hoặc nhiều hình thức xác thực khách hàng được kích hoạt. Một hoặc nhiều hình thức ủy quyền nên được kích hoạt, đặc biệt nếu cho phép yêu cầu ẩn danh hoặc token tài khoản dịch vụ.
