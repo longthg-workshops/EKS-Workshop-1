@@ -43,4 +43,4 @@ Kiến trúc của một cluster Kubernetes bao gồm các thành phần chính 
 
 Tất cả các thành phần này làm việc cùng nhau để tạo ra một môi trường chạy ứng dụng linh hoạt và mạnh mẽ trên Kubernetes cluster.
 
-![Kubernetes](/images/1/0002.png?featherlight=false&width=60pc)
+![Kubernetes](/EKS-Workshop-1/images/1/0002.png?featherlight=false&width=60pc)
