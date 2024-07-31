@@ -10,7 +10,7 @@ pre: "<b>1.4</b>"
 
 **Kube-apiserver** là thành phần chính trong Kubernetes. **Kube-apiserver** chịu trách nhiệm xác thực, kiểm tra yêu cầu, truy xuất và cập nhật dữ liệu trong cửa hàng khóa-giá trị **ETCD**. Thực tế, **kube-apiserver** là thành phần duy nhất tương tác trực tiếp với cơ sở dữ liệu **etcd**. Các thành phần khác như **kube-scheduler**, **kube-controller-manager** và **kubelet** sử dụng **API-Server** để cập nhật trong cụm ở các lĩnh vực tương ứng của họ.
 
-![Kubernetes](/images/4/0005.png?featherlight=false&width=60pc)
+![Kubernetes](/EKS-Workshop-1/images/4/0005.png?featherlight=false&width=60pc)
 
 #### **Cài đặt kube-apiserver**
 
