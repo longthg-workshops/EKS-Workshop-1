@@ -10,17 +10,15 @@ pre: "<b> 2. </b>"
 
 #### **Hướng dẫn thiết lập môi trường chạy lab trong tài khoản AWS của bạn**
 
-Phần này trình bày cách thiết lập môi trường để chạy tất cả các workshop trong tài khoản AWS của bạn. Hướng dẫn này đã được kiểm tra ở các vùng địa lý (Region) AWS sau đây và không đảm bảo hoạt động ở các khu vực khác mà không cần chỉnh sửa:
+Bước đầu tiên là tạo một IDE với mẫu CloudFormation được cung cấp. Cách đơn giản nhất là mở giao diện CloudFormation theo các đường dẫn dưới đây:
 
-- **`us-west-2`**
-- **`eu-west-1`**
+| Region           | Link                                                                                                                                                                                                                                                                                                                         |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `us-west2`       | [Mở tại đây](https://us-west-2.console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateUrl=https://ws-assets-prod-iad-r-pdx-f3b3f9f1a7d6a3d0.s3.us-west-2.amazonaws.com/39146514-f6d5-41cb-86ef-359f9d2f7265/eks-workshop-ide-cfn.yaml&stackName=eks-workshop-ide&param_RepositoryRef=stable)            |
+| `eu-west-1`      | [Mở tại đây](https://eu-west-1.console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateUrl=https://ws-assets-prod-iad-r-dub-85e3be25bd827406.s3.eu-west-1.amazonaws.com/39146514-f6d5-41cb-86ef-359f9d2f7265/eks-workshop-ide-cfn.yaml&stackName=eks-workshop-ide&param_RepositoryRef=stable)            |
+| `ap-southeast-1` | [Mở tại đây](https://ap-southeast-1.console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateUrl=https://ws-assets-prod-iad-r-sin-694a125e41645312.s3.ap-southeast-1.amazonaws.com/39146514-f6d5-41cb-86ef-359f9d2f7265/eks-workshop-ide-cfn.yaml&stackName=eks-workshop-ide&param_RepositoryRef=stable) |
 
-Bước đầu tiên là tạo một IDE với mẫu CloudFormation được cung cấp. Cách đơn giản nhất để làm điều này là sử dụng **AWS CloudShell** trong tài khoản mà bạn sẽ chạy các bài workshop. Mở **CloudShell** với liên kết bên dưới hoặc tuân theo [tài liệu này](https://docs.aws.amazon.com/cloudshell/latest/userguide/getting-started.html#launch-region-shell):
-
-[https://console.aws.amazon.com/cloudshell/home](https://console.aws.amazon.com/cloudshell/home)
-
-
-Nếu sử dụng liên kết ở trên, đảm bảo bảng điều khiển **AWS** đã mở ở vùng địa lý mà bạn muốn chạy các bài workshop.
+Các region ở trên đã được kiểm tra và đảm bảo. Việc chạy các bài workshop tại các vùng địa lý khác có thể không được đảm bảo
 
 ![EKS](/EKS-Workshop-1/images/1/00015.png?featherlight=false&width=90pc)
 
