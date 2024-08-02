@@ -1,12 +1,12 @@
 ---
-title: "Kustomize (tùy chọn)"
+title: "Kustomize"
 date: "`r Sys.Date()`"
 weight: 8
 chapter: false
 pre: "<b> 8. </b>"
 ---
 
-#### Kustomize (tùy chọn)
+#### Kustomize
 
 [Kustomize](https://kustomize.io/) cho phép bạn quản lý các tệp mẫu Kubernetes bằng cách sử dụng các tệp "kustomization" bằng cách khai báo. Nó cung cấp khả năng diễn đạt các tài nguyên Kubernetes "**cơ bản**" cho tài nguyên Kubernetes của bạn và sau đó áp dụng các thay đổi bằng cách sử dụng sự hợp thành, tùy chỉnh và dễ dàng thực hiện các thay đổi chéo qua nhiều tài nguyên.
 
