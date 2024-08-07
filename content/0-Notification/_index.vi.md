@@ -1,7 +1,7 @@
 ---
 title: "Lưu ý"
 date: "`r Sys.Date()`"
-weight: 0
+weight: 1
 chapter: false
 pre: "<b> 0. </b>"
 ---
