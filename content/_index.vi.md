@@ -15,7 +15,7 @@ Tên **Kubernetes** bắt nguồn từ tiếng Hy Lạp, nghĩa là người lá
 
 Hãy xem xét tại sao Kubernetes lại quan trọng thông qua việc nhìn lại quá khứ.
 
-![Kubernetes](/EKS-Workshop-1/images/4/00010.svg?featherlight=false&width=60pc)
+![Kubernetes](/EKS-Workshop-1/images/part1/00010.svg?featherlight=false&width=60pc)
 
 **Thời kỳ triển khai truyền thống:** Ban đầu, các ứng dụng được chạy trực tiếp trên máy chủ vật lý, khiến việc phân bổ tài nguyên gặp khó khăn do không có cơ chế xác định ranh giới tài nguyên cho từng ứng dụng. Cách tiếp cận này dẫn đến nguy cơ một ứng dụng có thể sử dụng quá nhiều tài nguyên, ảnh hưởng đến hoạt động của các ứng dụng khác. Giải pháp là chạy mỗi ứng dụng trên một máy chủ vật lý riêng biệt, nhưng điều này lại không hiệu quả về mặt chi phí và tài nguyên.
 
@@ -36,6 +36,6 @@ Kubernetes mang lại:
 - **Tự phục hồi**
 - **Quản lý cấu hình và bảo mật**
 
-#### Những gì Kubernetes không phải là
+#### Kubernetes không phải là...
 
 Kubernetes không phải là một hệ thống **PaaS** truyền thống, toàn diện. Nó hoạt động ở tầng container, cung cấp tính năng giống như **PaaS** như triển khai, nhân rộng, cân bằng tải, nhưng là một giải pháp linh hoạt và có thể mở rộng, không giới hạn loại ứng dụng được hỗ trợ, không triển khai mã nguồn hoặc build ứng dụng, không cung cấp dịch vụ ứng dụng cấp cao như **middleware**, **databases**, không bắt buộc sử dụng các giải pháp ghi nhật ký, giám sát hoặc cảnh báo, và không cung cấp hoặc áp dụng bất kỳ cấu hình toàn diện, bảo trì, quản lý hoặc hệ thống tự phục hồi. Kubernetes loại bỏ nhu cầu về điều phối truyền thống, thay vào đó là kiểm soát liên tục từ trạng thái hiện tại sang trạng thái mong muốn.

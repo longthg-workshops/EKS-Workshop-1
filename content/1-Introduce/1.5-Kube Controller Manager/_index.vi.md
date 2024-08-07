@@ -10,7 +10,7 @@ pre: "<b> 1.5 </b>"
 
 - Trình quản lý bộ điều khiển Kube (**Kube Controller Manager**) quản lý các bộ điều khiển khác nhau trong Kubernetes. Trong thuật ngữ của Kubernetes, một bộ điều khiển là một quá trình liên tục theo dõi trạng thái của các thành phần bên trong hệ thống và làm việc nhằm đưa toàn bộ hệ thống về trạng thái hoạt động mong muốn.
 
-![Kubernetes](/EKS-Workshop-1/images/4/0006.png?featherlight=false&width=60pc)
+![Kubernetes](/EKS-Workshop-1/images/part1/5/0006.png?featherlight=false&width=60pc)
 
 #### **Bộ Điều Khiển Nút (Node Controller)**
 
