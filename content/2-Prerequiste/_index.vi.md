@@ -6,7 +6,7 @@ chapter: false
 pre: "<b> 2. </b>"
 ---
 
-#### **Các Bước Chuẩn Bị**
+**_Lưu ý:_** _Hiện tại AWS sắp ngừng cung cấp Cloud9. Chúng tôi hiện tại đang tìm các giải pháp thay thế sớm nhất có thể._
 
 #### **Hướng dẫn thiết lập môi trường chạy lab trong tài khoản AWS của bạn**
 
