@@ -1,7 +1,7 @@
 ---
 title: "Thành phần khác"
 date: "`r Sys.Date()`"
-weight: 7
+weight: 8
 chapter: false
 pre: "<b> 7. </b>"
 ---
