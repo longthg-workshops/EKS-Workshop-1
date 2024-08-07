@@ -1,7 +1,7 @@
 ---
 title: "Triển khai"
 date: "`r Sys.Date()`"
-weight: 6
+weight: 7
 chapter: false
 pre: "<b> 6. </b>"
 ---
