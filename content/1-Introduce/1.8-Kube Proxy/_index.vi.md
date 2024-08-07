@@ -12,7 +12,7 @@ Trong cụm **Kubernetes**, mỗi **pod** có thể kết nối với mọi **po
 
 **Kube-Proxy** là một quy trình chạy trên mỗi **node** trong cụm **Kubernetes**.
 
-![Kubernetes](/EKS-Workshop-1/images/4/0008.png?featherlight=false&width=60pc)
+![Kubernetes](/EKS-Workshop-1/images/part1/8/0008.png?featherlight=false&width=60pc)
 
 - Cài đặt **kube-proxy** - Thủ công
 - Tải xuống tệp nhị phân **kube-proxy** từ trang phát hành **Kubernetes** tại [đây](kube-proxy). Ví dụ: Để tải về **kube-proxy** v1.13.0, chạy lệnh dưới đây.

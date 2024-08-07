@@ -12,7 +12,7 @@ Trong hệ thống **Kubernetes**, **Pods** là một khái niệm quan trọng.
 
 Mỗi Pod trong Kubernetes đều chứa một hoặc nhiều container, nhưng thông thường chúng chứa một container đơn, và đó là thể hiện của ứng dụng bạn đang chạy. Pod sẽ có mối quan hệ một-một với các container chạy ứng dụng của bạn.
 
-![Kubernetes](/EKS-Workshop-1/images/4/0009.png?featherlight=false&width=60pc)
+![Kubernetes](/EKS-Workshop-1/images/part1/9/0009.png?featherlight=false&width=60pc)
 
 #### Pod Đa-Container
 

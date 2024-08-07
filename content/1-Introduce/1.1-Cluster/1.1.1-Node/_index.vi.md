@@ -11,7 +11,7 @@ pre: "<b> 1.1.1 </b>"
 
 - **Kubernetes** chạy các tác vụ của bạn bằng cách đặt các container vào trong **Pods** để chạy trên **Nodes**. Một node có thể là máy ảo hoặc máy vật lý, tùy thuộc vào cụm. Mỗi node được quản lý bởi bộ điều khiển và chứa các dịch vụ cần thiết để chạy **Pods**.
 
-![Kubernetes](/EKS-Workshop-1/images/4/0001.png?featherlight=false&width=40pc)
+![Kubernetes](/EKS-Workshop-1/images/part1/1/1/0001.png?featherlight=false&width=40pc)
 
 - Thông thường, bạn sẽ có nhiều **nodes** trong một cụm; trong một môi trường học tập hoặc môi trường có hạn chế về tài nguyên, bạn có thể chỉ có một **node**.
 

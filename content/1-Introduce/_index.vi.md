@@ -17,7 +17,7 @@ Tên gọi Kubernetes có nguồn gốc từ tiếng Hy Lạp, có ý nghĩa là
 Chúng ta hãy xem tại sao Kubernetes rất hữu ích bằng cách quay ngược thời gian.
 
 
-![Kubernetes](/EKS-Workshop-1/images/4/00010.svg?featherlight=false&width=60pc)
+![Kubernetes](/EKS-Workshop-1/images/part1/00010.svg?featherlight=false&width=60pc)
 
 **Thời đại triển khai theo cách truyền thống:** Ban đầu, các ứng dụng được chạy trên các máy chủ vật lý. Không có cách nào để xác định ranh giới tài nguyên cho các ứng dụng trong máy chủ vật lý và điều này gây ra sự cố phân bổ tài nguyên. Ví dụ, nếu nhiều ứng dụng cùng chạy trên một máy chủ vật lý, có thể có những trường hợp một ứng dụng sẽ chiếm phần lớn tài nguyên hơn và kết quả là các ứng dụng khác sẽ hoạt động kém đi. Một giải pháp cho điều này sẽ là chạy từng ứng dụng trên một máy chủ vật lý khác nhau. Nhưng giải pháp này không tối ưu vì tài nguyên không được sử dụng đúng mức và rất tốn kém cho các tổ chức để có thể duy trì nhiều máy chủ vật lý như vậy.
 
@@ -68,7 +68,7 @@ Kubernetes cung cấp cho bạn:
 - Kubernetes cho phép bạn lưu trữ và quản lý các thông tin nhạy cảm như: password, OAuth token và SSH key. Bạn có thể triển khai và cập nhật lại secret và cấu hình ứng dụng mà không cần build lại các container image và không để lộ secret trong cấu hình stack của bạn.
 
 
-#### Kubernetes không phải là gì?
+#### Kubernetes không phải là...
 
 Kubernetes không phải là một hệ thống PaaS (Nền tảng như một Dịch vụ) truyền thống, toàn diện. Do Kubernetes hoạt động ở tầng container chứ không phải ở tầng phần cứng, nó cung cấp một số tính năng thường áp dụng chung cho các dịch vụ PaaS, như triển khai, nhân rộng, cân bằng tải, ghi nhật ký và giám sát. Tuy nhiên, Kubernetes không phải là cấu trúc nguyên khối và các giải pháp mặc định này là tùy chọn và có thể cắm được (pluggable).
 
