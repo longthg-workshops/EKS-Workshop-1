@@ -1,9 +1,9 @@
 ---
 title: "Lưu ý"
 date: "`r Sys.Date()`"
-weight: 1
+weight: 0
 chapter: false
-pre: "<b> 1. </b>"
+pre: "<b> 0. </b>"
 ---
 
 # Lưu ý
