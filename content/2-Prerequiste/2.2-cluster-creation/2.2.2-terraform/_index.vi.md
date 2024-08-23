@@ -3,7 +3,7 @@ title: "Sử dụng Terraform"
 date: "`r Sys.Date()`"
 weight: 2
 chapter: false
-pre: "<b> 2.2 </b>"
+pre: "<b> 2.2.2 </b>"
 ---
 
 #### Xây dựng một cụm cho các bài thực hành Lab sử dụng [Hashicorp Terraform](https://developer.hashicorp.com/terraform).

@@ -3,7 +3,7 @@ title: "Cấu trúc"
 date: "`r Sys.Date()`"
 weight: 3
 chapter: false
-pre: "<b> 2.3 </b>"
+pre: "<b> 2.2.3 </b>"
 ---
 
 #### Hướng dẫn sử dụng trang web và nội dung được cung cấp
