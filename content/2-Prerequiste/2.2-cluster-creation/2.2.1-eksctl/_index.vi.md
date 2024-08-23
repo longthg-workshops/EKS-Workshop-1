@@ -3,7 +3,7 @@ title: "Sử dụng eksctl"
 date: "`r Sys.Date()`"
 weight: 1
 chapter: false
-pre: "<b> 2.1 </b>"
+pre: "<b> 2.2.1 </b>"
 ---
 
 #### Xây dựng một cluster cho các bài thực hành lab sử dụng công cụ [eksctl](https://eksctl.io/). Đây là cách dễ nhất để bắt đầu, và được khuyến nghị cho hầu hết các người học.
