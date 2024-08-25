@@ -20,7 +20,7 @@ Bước đầu tiên là tạo một IDE với mẫu CloudFormation được cun
 
 Các region ở trên đã được kiểm tra và đảm bảo. Việc chạy các bài workshop tại các vùng địa lý khác có thể không được đảm bảo
 
-![EKS](/EKS-Workshop-1/images/part2/00015.png?featherlight=false&width=90pc)
+![EKS](/EKS-Workshop-1/images/2/1/1/00015.png?featherlight=false&width=90pc)
 
 Một cách khác là mở **CloudShell** tại một trong các region trên và chạy các lệnh sau:
 
@@ -45,7 +45,7 @@ https://us-west-2.console.aws.amazon.com/cloud9/ide/7b05513358534d11afeb7119845c
 
 Mở URL này trong trình duyệt web để truy cập vào **IDE**.
 
-![EKS](/EKS-Workshop-1/images/part2/00016.png?featherlight=false&width=90pc)
+![EKS](/EKS-Workshop-1/images/2/1/1/00016.png?featherlight=false&width=90pc)
 
 Bạn có thể đóng **CloudShell** ngay bây giờ, tất cả các lệnh tiếp theo sẽ được thực hiện trong phần terminal ở dưới cùng của **Cloud9 IDE**. **AWS CLI** đã được cài đặt sẵn và sẽ nhận các thông tin xác thực được gắn với **Cloud9 IDE**:
 
