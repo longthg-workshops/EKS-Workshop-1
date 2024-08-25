@@ -33,22 +33,22 @@ $ aws cloudformation describe-stacks --stack-name eks-workshop-ide \
 
 {{% notice note %}}
 Trong trường hợp CloudFormation báo lỗi không tạo được CloudFront Distribution do chưa xác thực tài khoản, bạn có thể yêu cầu nâng giới hạn tài nguyên CloudFront Distribution [tại đây](https://support.console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase).
-![](/EKS-Workshop-1/images/part2/2.1/2.1.2/quota-failed-01.jpg?featherlight=false&width=30pc)
+![](/EKS-Workshop-1/images/2/1/2/quota-failed-01.jpg?featherlight=false&width=30pc)
 Tại mục _Service_, chọn "CloudFront Distribution".
-![](/EKS-Workshop-1/images/part2/2.1/2.1.2/quota-inc-01.jpg?featherlight=false&width=90pc)
+![](/EKS-Workshop-1/images/2/1/2/quota-inc-01.jpg?featherlight=false&width=90pc)
 Tại mục _Request 1_, chọn _Quota_ là _Web Distributions per Account_ và đặt giá trị cao hơn giới hạn trước đó của bạn (nếu tài khoản của bạn mới được tạo và bạn chưa dùng CloudFront Distribution trên tài khoản, bạn có thể điền mọi giá trị dương)
-![](/EKS-Workshop-1/images/part2/2.1/2.1.2/quota-inc-02.jpg?featherlight=false&width=90pc)
+![](/EKS-Workshop-1/images/2/1/2/quota-inc-02.jpg?featherlight=false&width=90pc)
 Tại mục _Case description_, chép mã lỗi chi tiết tại bước tạo CloudFront Distribution và dán vào khung, kèm miêu tả của bạn về lỗi gặp phải.
-![](/EKS-Workshop-1/images/part2/2.1/2.1.2/quota-inc-03.jpg?featherlight=false&width=90pc)
+![](/EKS-Workshop-1/images/2/1/2/quota-inc-03.jpg?featherlight=false&width=90pc)
 Sau khi thực hiện xong, chọn phương thức liên hệ. Sau đó nhấn _Submit_ ở cuối trang.
-![](/EKS-Workshop-1/images/part2/2.1/2.1.2/quota-inc-04.jpg?featherlight=false&width=90pc)
+![](/EKS-Workshop-1/images/2/1/2/quota-inc-04.jpg?featherlight=false&width=90pc)
 Hãy chờ một thời gian, theo dõi case và tích cực trao đổi để được hỗ trợ. Việc chờ xác thực tài khoản va nâng hạn mức
 {{% /notice %}}
 
 
 Mở URL này trong trình duyệt web để truy cập vào **IDE**.
 
-![EKS](/EKS-Workshop-1/images/part2/2.1/2.1.2/vsc-web.png?featherlight=false&width=90pc)
+![EKS](/EKS-Workshop-1/images/2/1/2/vsc-web.png?featherlight=false&width=90pc)
 
 Bạn có thể đóng **CloudShell** ngay bây giờ, tất cả các lệnh tiếp theo sẽ được thực hiện trong phần terminal ở dưới cùng của **Cloud9 IDE**. **AWS CLI** đã được cài đặt sẵn và sẽ nhận các thông tin xác thực được gắn với **Cloud9 IDE**:
 
