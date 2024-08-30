@@ -26,16 +26,7 @@ Các region ở trên đã được kiểm tra và đảm bảo. Việc chạy c
 
 Một cách khác là mở **CloudShell** tại một trong các region trên và chạy các lệnh sau:
 
-```bash test=false
-$ wget -q https://raw.githubusercontent.com/aws-samples/eks-workshop-v2/stable/lab/cfn/eks-workshop-ide-cfn.yaml -O eks-workshop-ide-cfn.yaml
-$ aws cloudformation deploy --stack-name eks-workshop-ide \
-    --template-file ./eks-workshop-ide-cfn.yaml \
-    --parameter-overrides RepositoryRef=stable \
-    --capabilities CAPABILITY_NAMED_IAM
-Waiting for changeset to be created...
-Waiting for stack create/update to complete
-Successfully created/updated stack - eks-workshop-ide
-```
+
 
 **CloudFormation Stack** sẽ mất khoảng 5 phút để triển khai, và khi hoàn tất, bạn có thể lấy URL cho **Cloud9 IDE** như sau:
 
