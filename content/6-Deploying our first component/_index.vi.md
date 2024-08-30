@@ -14,17 +14,17 @@ pre: "<b> 6. </b>"
 
 Cách dễ nhất để duyệt các tuyên bố YAML cho ứng dụng mẫu và các module trong hội thảo này là sử dụng trình duyệt tệp trong **Cloud9**:
 
-![EKS](/EKS-Workshop-1/images/part6/00021.png?featherlight=false&width=60pc)
+![EKS](/images//part6/00021.png?featherlight=false&width=60pc)
 
 Mở rộng các mục `eks-workshop` và sau đó `base-application` sẽ cho phép bạn duyệt các tuyên bố tạo thành trạng thái ban đầu của ứng dụng mẫu:
 
-![EKS](/EKS-Workshop-1/images/part6/00022.png?featherlight=false&width=60pc)
+![EKS](/images//part6/00022.png?featherlight=false&width=60pc)
 
 Cấu trúc bao gồm một thư mục cho mỗi thành phần ứng dụng được mô tả trong phần **Ứng dụng mẫu**.
 
 Thư mục `modules` chứa các bộ tuyên bố mà chúng ta sẽ áp dụng vào cụm trong các bài tập thực hành lab sau:
 
-![EKS](/EKS-Workshop-1/images/part6/00023.png?featherlight=false&width=60pc)
+![EKS](/images//part6/00023.png?featherlight=false&width=60pc)
 
 Trước khi làm bất kỳ điều gì, hãy kiểm tra các **Namespaces** hiện tại trong cụm **EKS** của chúng ta:
 

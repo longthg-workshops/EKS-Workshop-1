@@ -9,7 +9,7 @@ pre: "<b> 2.1.3 </b>"
 Truy cập vào [mục Policies của bảng điều khiển IAM](https://console.aws.amazon.com/iam/home#/policies).
 - Tại đây, chọn **_Create Policy_** để vào giao diện tạo Policy
 
-![](/EKS-Workshop-1/images/2/1/3/001.jpg?width=110pc)
+![](/images//2/1/3/001.jpg?width=110pc)
 
 Trong giao diện **_Specify Policy_**:
 - Chọn định dạng JSON và dán vào đoạn mã dưới đây:
@@ -47,19 +47,19 @@ Trong giao diện **_Specify Policy_**:
 }
 ```
 
-![](/EKS-Workshop-1/images/2/1/3/002.jpg?width=50pc)
+![](/images//2/1/3/002.jpg?width=50pc)
 
 - Chọn **_Next_**
 
 Trong giao diện **_Review and Create_**, tại phần **_Policy details_**, nhập tên cho chính sách (VD: `ssh-key-gen-policy`)
 
-![](/EKS-Workshop-1/images/2/1/3/003.jpg?width=50pc)
+![](/images//2/1/3/003.jpg?width=50pc)
 
 ### **Tạo IAM Role cho phép tạo SSH Key**
 Truy cập vào [mục Roles của bảng điều khiển IAM](https://console.aws.amazon.com/iam/home#/roles).
 - Tại đây, chọn **_Create Role_** để vào giao diện tạo Role.
 
-![](/EKS-Workshop-1/images/2/1/3/004.jpg?width=100pc)
+![](/images//2/1/3/004.jpg?width=100pc)
 
 Tại bước **_Select trusted entity_**:
 - Ở mục **_Trusted entity type_**, chọn **_AWS Services_**.
@@ -67,11 +67,11 @@ Tại bước **_Select trusted entity_**:
 
 Tại bước **_Add Permissions_**, tìm tên Policy vừa tạo và tích chọn nó.
 
-![](/EKS-Workshop-1/images/2/1/3/005.jpg?width=100pc)
+![](/images//2/1/3/005.jpg?width=100pc)
 
 Tại bước **_Name, review, and create_**, nhập tên cho Role muốn tạo (VD: `Name, review, and create`).
 
-![](/EKS-Workshop-1/images/2/1/3/006.jpg?width=50pc)
+![](/images//2/1/3/006.jpg?width=50pc)
 
 Kéo xuống cuối trang và nhấn **_Create Role_**.
 
@@ -81,7 +81,7 @@ Trong giao diện AWS Lambda:
 - Chọn **_Functions_**
 - Chọn **_Create function_**
 
-![](/EKS-Workshop-1/images/2/1/3/007.jpg?width=50pc)
+![](/images//2/1/3/007.jpg?width=50pc)
 
 Trong giao diện Create funtion:
 - Chọn **_Author from scratch_**
@@ -89,7 +89,7 @@ Trong giao diện Create funtion:
 - Với **_Runtime_**, chọn **_Python 3.9_**
 - Với **_Architecture_**, chọn **_x86_64_**
 
-![](/EKS-Workshop-1/images/2/1/3/008.jpg?width=50pc)
+![](/images//2/1/3/008.jpg?width=50pc)
 
 Mở rộng mục **_Change default execution role_**:
 - Chọn **_Use an existing role_**
@@ -269,7 +269,7 @@ def lambda_handler(event, context):
 
 Lưu lại hàm và chọn **_Deploy_**.
 
-![](/EKS-Workshop-1/images/2/1/3/009.jpg)
+![](/images//2/1/3/009.jpg)
 
 Lưu lại ARN của hàm để dùng cho các bước sau.
 
@@ -278,13 +278,13 @@ Tải tệp template tại link này.
 
 Truy cập giao diện [CloudFormation](console.aws.amazon.com/cloudformation/home)
 
-![](/EKS-Workshop-1/images/2/1/3/010.jpg)
+![](/images//2/1/3/010.jpg)
 
 - Chọn **_Create Stack_**.
 
 Nhập tên cho **_Stack Name_** và **_Environment Name_**. Với **_Function ARN_**, nhập ARN của hàm Lambda vừa tạo
 
-![](/EKS-Workshop-1/images/2/1/3/011.jpg)
+![](/images//2/1/3/011.jpg)
 
 Nhấn Next qua các bước và đợi đến khi Stack được tạo xong.
 
@@ -319,24 +319,24 @@ Host remote-connection
 
 - Sau khi cài đặt tiện ích, bạn sẽ nhìn thấy icon ở phía dưới bên trái của màn hình.
 
-![](/EKS-Workshop-1/images/2/1/3/014.png)
+![](/images//2/1/3/014.png)
 
 - Ấn vào icon để mở bảng chọn kết nối. Chọn “Connect to Host…”
 
-![](/EKS-Workshop-1/images/2/1/3/015.png)
+![](/images//2/1/3/015.png)
 
 - Chọn “Add New SSH Host” để tạo một SSH Host mới
 
-![](/EKS-Workshop-1/images/2/1/3/016.png)
+![](/images//2/1/3/016.png)
 
 - Chọn `C:\Users\<tên người dùng>\.ssh\config` để mở file config 
 
 - Sau khi thiết lập xong, bạn ấn vào icon để mở bạng chọn và điều hướng tới “remote-connection”
 
-![](/EKS-Workshop-1/images/2/1/3/017.png)
+![](/images//2/1/3/017.png)
 
 - Tiếp theo, bạn chọn Platform details “Linux” và chọn “Continue”
 
-![](/EKS-Workshop-1/images/2/1/3/018.png)
+![](/images//2/1/3/018.png)
 
 Nếu thành công, một cửa sổ VSCode mới sẽ mở lên và bạn sẽ được truy cập vào EC2. Từ đây hãy tìm đến thư mục **_Environment_** để mở môi trường thực hiện workshop và qua bước tiếp theo.
