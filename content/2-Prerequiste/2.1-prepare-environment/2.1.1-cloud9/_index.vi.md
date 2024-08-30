@@ -20,7 +20,7 @@ Bước đầu tiên là tạo một IDE với mẫu CloudFormation được cun
 | `eu-west-1`      | [Mở tại đây](https://eu-west-1.console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateUrl=https://ws-assets-prod-iad-r-dub-85e3be25bd827406.s3.eu-west-1.amazonaws.com/39146514-f6d5-41cb-86ef-359f9d2f7265/eks-workshop-ide-cfn.yaml&stackName=eks-workshop-ide&param_RepositoryRef=stable)            |
 | `ap-southeast-1` | [Mở tại đây](https://ap-southeast-1.console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateUrl=https://ws-assets-prod-iad-r-sin-694a125e41645312.s3.ap-southeast-1.amazonaws.com/39146514-f6d5-41cb-86ef-359f9d2f7265/eks-workshop-ide-cfn.yaml&stackName=eks-workshop-ide&param_RepositoryRef=stable) |
 
-Các region ở trên đã được kiểm tra và đảm bảo. Việc chạy các bài workshop tại các vùng địa lý khác có thể không được đảm bảo:
+Các region ở trên đã được kiểm tra và không được đảm bảo. Việc chạy các bài workshop tại các vùng địa lý khác có thể không được đảm bảo:
 
 ![EKS](/images//2/1/1/00015.png?featherlight=false&width=90pc)
 
