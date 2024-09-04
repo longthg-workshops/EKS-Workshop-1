@@ -1,4 +1,3 @@
-
 ---
 title: "Kubelet"
 date: "`r Sys.Date()`"

@@ -17,14 +17,25 @@ Nếu bạn đã tạo và lưu sẵn Key Pair, bạn có thể bỏ qua bước
 
 Tại giao diện **_Create Key Pair_**:
 - Tại mục _Name_, nhập tên tùy ý cho Key Pair.
-- Tiếp đến, chọn loại khóa RSA và định dạng _.pem_.
+- Tiếp đến, chọn một trong hai loại khóa và định dạng _.pem_.
 - Nhấn nút _Create key pair_ ở cuối (màu cam) để tiến hành tạo khóa.
 
 ![](/EKS-Workshop-1/images/2/1/3/002.jpg?width=50pc)
 
-Lưu file khóa trên máy tính. Khóa này sẽ được dùng để gắn vào EC2 được tạo ở bước kế tiếp.
+Lưu file private key trên máy tính. Khóa này sẽ được dùng để gắn vào EC2 được tạo ở bước kế tiếp.
 
 ![](/EKS-Workshop-1/images/2/1/3/003.jpg?width=50pc)
+
+Hãy đảm bảo chỉ có bạn mới có thể truy cập vào file _.pem_.
+
+- Với Linux, sử dụng lệnh:
+```bash
+chmod 400 <đường dẫn tới file pem>
+```
+
+- Với Windows, đảm bảo quyền truy cập của bạn như sau:
+
+![](/EKS-Workshop-1/images/2/1/3/004.jpg?width=50pc)
 
 ### **Tạo CloudFormation Stack**
 Tải tệp template tại link này.
@@ -48,7 +59,7 @@ Nhấn Next qua các bước và đợi đến khi Stack được tạo xong.
 ![](/EKS-Workshop-1/images/2/1/3/008.jpg?width=50pc)
 
 ### **Cấu hình kết nối SSH trên máy tính của bạn**
-Tại giao diện của CloudFormation stack đã tạo, chuyển sang mục _Output_. Tìm khóa _VSCodeServerPublicIP_, giá trị của khóa này chính là địa chỉ cần kết nối đến.
+Tại giao diện của CloudFormation stack đã tạo, chuyển sang mục _Output_. Tìm khóa _IdeInstancePublicIP_, giá trị của khóa này chính là địa chỉ cần kết nối đến.
 
 ![](/EKS-Workshop-1/images/2/1/3/007.jpg?width=70pc)
 
@@ -57,7 +68,7 @@ Thêm vào file `C:\Users\<Tên người dùng>\.ssh\config` (nếu bạn đang 
 ```
 Host remote-connection
     HostName <public ip của EC2>
-    User ubuntu
+    User ec2-user
     IdentityFile "<đường dẫn đến file pem đã lưu>"
 ```
 
@@ -86,4 +97,10 @@ Host remote-connection
 
 ![](/EKS-Workshop-1/images/2/1/3/018.png)
 
-Nếu thành công, một cửa sổ VSCode mới sẽ mở lên và bạn sẽ được truy cập vào EC2. Từ đây hãy tìm đến thư mục **_Environment_** để mở môi trường thực hiện workshop và qua bước tiếp theo.
+Nếu thành công, một cửa sổ VSCode mới sẽ mở lên và bạn sẽ được truy cập vào EC2. Chọn **_"File > Open"_** để mở thư mục
+
+![](/EKS-Workshop-1/images/2/1/3/019.jpg?width=50pc)
+
+Chọn thư mục _**/home/\< tên người dùng \>/environment**_
+
+![](/EKS-Workshop-1/images/2/1/3/020.jpg?width=50pc)

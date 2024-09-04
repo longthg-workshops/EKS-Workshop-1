@@ -1,5 +1,5 @@
 ---
-title: "Triển khai"
+title: "Triển khai thành phần đầu tiên"
 date: "`r Sys.Date()`"
 weight: 7
 chapter: false

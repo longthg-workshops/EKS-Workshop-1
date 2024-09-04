@@ -6,9 +6,11 @@ chapter: false
 pre: "<b> 2.2.1 </b>"
 ---
 
-#### Xây dựng một cluster cho các bài thực hành lab sử dụng công cụ [eksctl](https://eksctl.io/). Đây là cách dễ nhất để bắt đầu, và được khuyến nghị cho hầu hết các người học.
+#### Xây dựng một cluster cho các bài thực hành lab sử dụng công cụ [eksctl](https://eksctl.io/). 
 
-Tiện ích **eksctl** đã được cài đặt sẵn trong Môi trường Amazon Cloud9 của bạn, vì vậy chúng ta có thể ngay lập tức tạo ra cluster. Đây là cấu hình sẽ được sử dụng để xây dựng cluster:
+_**Đây là cách dễ nhất để bắt đầu, và được khuyến nghị cho hầu hết các người học.**_
+
+Tiện ích **eksctl** đã được cài đặt sẵn trong Môi trường của bạn, vì vậy chúng ta có thể ngay lập tức tạo ra cluster. Đây là cấu hình sẽ được sử dụng để xây dựng cluster:
 
 ```file hidePath=true
 manifests/../cluster/eksctl/cluster.yaml

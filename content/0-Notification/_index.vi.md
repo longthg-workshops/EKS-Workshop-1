@@ -8,7 +8,7 @@ pre: "<b> 0. </b>"
 
 ### Lưu ý
 
-Hiện tại Cloud9 có thể bị dừng cung cấp trong tương lai gần. Chúng tôi hiện tại đang tìm các giải pháp thay thế sớm nhất có thể.
+Hiện tại Cloud9 có thể bị dừng cung cấp trong tương lai gần. Chúng tôi đã đề xuất một số giải pháp thay thế và khuyến khích các bạn chuyển sang chúng.
 
 Thông tin chính thức từ [AWS](https://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/):
 

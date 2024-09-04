@@ -1,18 +1,19 @@
 ---
-title: "Triển khai môi trường lab trên Cloud9 (Đã ngừng hỗ trợ)"
+title: "Deploy Cloud9 Lab Environment (Deprecated - Not recommended)"
 date: "`r Sys.Date()`"
 weight: 1
 chapter: false
 pre: "<b> 2.1.1 </b>"
 ---
 
-**_Lưu ý:_** _Hiện tại AWS đã ngừng hỗ trợ Cloud9 cho tài khoản mới. Chúng tôi khuyến khích bạn dùng các giải pháp được nêu ở sau phần này._
+**_Attention:_** Cloud 9 has been deprecated and may not be supported for new accounts. We recommend moving to our suggested alternative solutions.
 
-#### **Hướng dẫn thiết lập môi trường Cloud9 trong tài khoản AWS của bạn**
 
-Bước đầu tiên là tạo một IDE với mẫu CloudFormation được cung cấp. Cách đơn giản nhất là mở giao diện CloudFormation theo các đường dẫn dưới đây:
+### How to set up the environment to run the labs in your own AWS account.
 
-Các region sau đã được kiểm tra và đảm bảo. Việc chạy các bài workshop tại các vùng địa lý khác có thể không được đảm bảo:
+The first step is to create an IDE with the provided CloudFormation templates. You have the choice between using AWS Cloud9 or a browser-accessible instance of VSCode that will run on an EC2 instance in your AWS account.
+
+These instructions have been tested in the following AWS regions and are not guaranteed to work in others without modification:
 
 | Region           | Cloud9 Link                                                                                                                                                                                                                                                                                                                        | VSCode Link (Preview)                                                                                                                                                                                                                                                                                                           |
 | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -20,9 +21,7 @@ Các region sau đã được kiểm tra và đảm bảo. Việc chạy các b�
 | `eu-west-1`      | [Launch](https://eu-west-1.console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateUrl=https://ws-assets-prod-iad-r-dub-85e3be25bd827406.s3.eu-west-1.amazonaws.com/39146514-f6d5-41cb-86ef-359f9d2f7265/eks-workshop-ide-cfn.yaml&stackName=eks-workshop-ide&param_RepositoryRef=VAR::MANIFESTS_REF)               | [Launch](https://eu-west-1.console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateUrl=https://ws-assets-prod-iad-r-dub-85e3be25bd827406.s3.eu-west-1.amazonaws.com/39146514-f6d5-41cb-86ef-359f9d2f7265/eks-workshop-vscode-cfn.yaml&stackName=eks-workshop-ide&param_RepositoryRef=VAR::MANIFESTS_REF)         |
 | `ap-southeast-1` | [Launch](https://ap-southeast-1.console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateUrl=https://ws-assets-prod-iad-r-sin-694a125e41645312.s3.ap-southeast-1.amazonaws.com/39146514-f6d5-41cb-86ef-359f9d2f7265/eks-workshop-vscode-cfn.yaml&stackName=eks-workshop-ide&param_RepositoryRef=VAR::MANIFESTS_REF") | [Launch](https://ap-southeast-1.console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateUrl=https://ws-assets-prod-iad-r-sin-694a125e41645312.s3.ap-southeast-1.amazonaws.com/39146514-f6d5-41cb-86ef-359f9d2f7265/eks-workshop-ide-cfn.yaml&stackName=eks-workshop-ide&param_RepositoryRef=VAR::MANIFESTS_REF") |
 
-![EKS](/EKS-Workshop-1/images/2/1/1/00015.png?featherlight=false&width=90pc)
-
-Một cách khác là mở **CloudShell** tại một trong các region trên và chạy các lệnh sau:
+Alternatively, you can open CloudShell in the mentioned region and run the following command:
 
 ```bash test=false
 $ wget -q https://raw.githubusercontent.com/aws-samples/eks-workshop-v2/stable/lab/cfn/eks-workshop-ide-cfn.yaml -O eks-workshop-ide-cfn.yaml
@@ -35,22 +34,23 @@ Waiting for stack create/update to complete
 Successfully created/updated stack - eks-workshop-ide
 ```
 
-**CloudFormation Stack** sẽ mất khoảng 5 phút để triển khai, và khi hoàn tất, bạn có thể lấy URL cho **Cloud9 IDE** như sau:
+The stack may take a few minutes to complete. When the stack creation is done, you can run the followin command in CloudShell to get the IDE's URL:
 
-```bash test=false
-$ aws cloudformation describe-stacks --stack-name eks-workshop-ide \
+```bash
+aws cloudformation describe-stacks --stack-name eks-workshop-ide \
     --query 'Stacks[0].Outputs[?OutputKey==`Cloud9Url`].OutputValue' --output text
+
 https://us-west-2.console.aws.amazon.com/cloud9/ide/7b05513358534d11afeb7119845c5461?region=us-west-2
 ```
 
-Mở URL này trong trình duyệt web để truy cập vào **IDE**.
+Open the URL in your browser to use Cloud9.
 
 ![EKS](/EKS-Workshop-1/images/2/1/1/00016.png?featherlight=false&width=90pc)
 
-Bạn có thể đóng **CloudShell** ngay bây giờ, tất cả các lệnh tiếp theo sẽ được thực hiện trong phần terminal ở dưới cùng của **Cloud9 IDE**. **AWS CLI** đã được cài đặt sẵn và sẽ nhận các thông tin xác thực được gắn với **Cloud9 IDE**:
+You can now close **CloudShell**, as all the following commands will be done in the **Cloud9** Terminal. The **AWS CLI** is also install and will retrieve authentication information attached to the IDE. You can run the following command to check it:
 
 ```bash test=false
 $ aws sts get-caller-identity
 ```
 
-Bước tiếp theo là tạo một cụm **EKS** để thực hiện các bài workshop. Nội dung này sẽ được trình bày tại _phần 2.2_.
+The next step is to create an **EKS** cluster for the workshop. This will be in part _2.2_.

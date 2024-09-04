@@ -1,5 +1,5 @@
 ---
-title: "Cấu trúc"
+title: "Cấu trúc workshop"
 date: "`r Sys.Date()`"
 weight: 3
 chapter: false
@@ -17,7 +17,7 @@ Các bài tập thực hành được thiết kế một cách sao cho bạn có
 
 Module này chứa một bài lab duy nhất có tên là **Bắt đầu** sẽ được hiển thị ở phía trái màn hình của bạn.
 
-Bạn nên bắt đầu mỗi bài lab từ trang được chỉ định bằng huy hiệu này. Bắt đầu ở giữa một bài lab sẽ gây ra hành vi không đoán trước được.
+Bạn nên bắt đầu mỗi bài lab từ trang đầu tiên. Bắt đầu ở giữa một bài lab sẽ gây ra các biểu hiện không đoán trước được.
 
 #### Cloud9 IDE
 
