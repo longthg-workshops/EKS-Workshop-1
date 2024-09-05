@@ -6,10 +6,11 @@ chapter: false
 pre: "<b> 1.1 </b>"
 ---
 
-#### Kiến trúc Cluster
-**Kiến trúc của một cluster Kubernetes**
+#### **Kiến trúc của một cluster Kubernetes**
 
 Kiến trúc của một cluster Kubernetes bao gồm các thành phần chính sau:
+
+![Kubernetes Arch](/EKS-Workshop-1/images/part1/1/0002.png?featherlight=false&width=60pc)
 
 1. **Master Node**: Master node quản lý và điều khiển toàn bộ cluster. Các thành phần chính trên master node bao gồm:
 
@@ -39,8 +40,6 @@ Kiến trúc của một cluster Kubernetes bao gồm các thành phần chính 
 
 7. **Ingress Controller**: Ingress controller quản lý việc điều hướng yêu cầu HTTP/HTTPS đến các dịch vụ trong cluster dựa trên các quy tắc cấu hình.
 
-8. **Storage Classes**: Storage classes định nghĩa các loại lưu trữ khác nhau mà có thể được yêu cầu bởi các persistent volume.
+8. **Storage Classes**: Storage classes định nghĩa các loại lưu trữ khác nhau các persistent volume có thể yêu cầu.
 
 Tất cả các thành phần này làm việc cùng nhau để tạo ra một môi trường chạy ứng dụng linh hoạt và mạnh mẽ trên Kubernetes cluster.
-
-![Kubernetes](/EKS-Workshop-1/images/part1/1/0002.png?featherlight=false&width=60pc)
