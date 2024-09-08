@@ -6,7 +6,7 @@ chapter: false
 pre: "<b> 1.7 </b>"
 ---
 
-#### Kubelet
+### Kubelet
 
 Kubelet là một trong những thành phần quan trọng của Kubernetes. Nó chịu trách nhiệm quản lý và duy trì các container chạy trên mỗi node trong cụm Kubernetes.
 
@@ -28,7 +28,7 @@ Sau khi tải xuống, giải nén file và chạy nó như một dịch vụ.
 $ ps -aux | grep kubelet
 ```
 
-#### Tài liệu tham khảo Kubernetes:
+### Tài liệu tham khảo Kubernetes:
 
 - [Command Line Tools Reference - Kubelet](https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/)
 - [Overview Components](https://kubernetes.io/docs/concepts/overview/components/)

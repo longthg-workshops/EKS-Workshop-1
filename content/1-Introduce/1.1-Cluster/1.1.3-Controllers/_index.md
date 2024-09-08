@@ -63,7 +63,7 @@ It's useful to have simple controllers rather than one, monolithic set of contro
 
 {{% notice note %}}
 There can be several controllers that create or update the same kind of object. Behind the scenes, Kubernetes controllers make sure that they only pay attention to the resources linked to their controlling resource.\
-\
+![Kubernetes Controllers](/EKS-Workshop-1/images/part1/1/3/0003.png?featherlight=false&width=60pc)
 For example, you can have Deployments and Jobs; these both create Pods. The Job controller does not delete the Pods that your Deployment created, because there is information (labels) the controllers can use to tell those Pods apart.
 {{% /notice %}}
 

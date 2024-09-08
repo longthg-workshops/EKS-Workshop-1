@@ -8,7 +8,7 @@ pre: "<b> 5. </b>"
 
 #### Microservices trên Kubernetes
 
-Bây giờ khi chúng ta đã quen với kiến trúc tổng quan của ứng dụng mẫu, chúng ta sẽ bắt đầu triển khai vào **EKS** như thế nào? Hãy khám phá một số khối dựng **Kubernetes** bằng cách xem **component** **catalog**:
+Bây giờ khi chúng ta đã quen với kiến trúc tổng quan của ứng dụng mẫu, chúng ta sẽ bắt đầu triển khai vào **EKS** như thế nào? Hãy tìm hiểu một số cách xây dựng **Kubernetes** bằng cách xem **component** **catalog**:
 
 ![EKS](/EKS-Workshop-1/images/part5/00019.png?featherlight=false&width=60pc)
 

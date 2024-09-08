@@ -28,7 +28,7 @@ Trong **Kubernetes**, các **controller** là các **vòng lặp điều khiển
 
 (Một khi được lên lịch, các đối tượng Pod trở thành phần của trạng thái mong muốn cho một kubelet).
 
-- Khi **controller Job** thấy một nhiệm vụ mới, nó đảm bảo rằng, ở đâu đó trong cluster của bạn, các kubelet trên một nhóm Nodes đang chạy số lượng Pods đúng để hoàn thành công việc. **Controller Job** không chạy bất kỳ Pod hoặc container nào. Thay vào đó, **controller Job** yêu cầu máy chủ API tạo hoặc xóa Pods. Các thành phần khác trong bộ điều khiển thực hiện theo thông tin mới (có Pods mới cần được lên lịch và chạy), và cuối cùng công việc được hoàn thành.
+- Khi **controller Job** thấy một nhiệm vụ mới, nó đảm bảo rằng, ở đâu đó trong cluster của bạn, các kubelet trên một nhóm Nodes đang chạy số lượng Pods đúng để hoàn thành công việc. **Controller Job** không chạy bất kỳ Pod hoặc container nào. Thay vào đó, **controller Job** yêu cầu máy chủ API tạo hoặc xóa Pods. Các thành phần khác trong controller thực hiện theo thông tin mới (có Pods mới cần được lên lịch và chạy), và cuối cùng công việc được hoàn thành.
 
 - Sau khi bạn tạo một **Job** mới, trạng thái mong muốn là cho **Job** đó được hoàn thành. **Controller Job** làm cho trạng thái hiện tại của **Job** đó gần hơn với trạng thái mong muốn: tạo Pods thực hiện công việc bạn muốn cho **Job** đó, để **Job** gần hơn với việc hoàn thành.
 
@@ -47,4 +47,29 @@ Trong **Kubernetes**, các **controller** là các **vòng lặp điều khiển
 
 - Điểm quan trọng ở đây là **controller** thực hiện một số thay đổi để đạt được trạng thái mong muốn, sau đó báo cáo trạng thái hiện tại trở lại máy chủ API của cluster. Các **vòng lặp điều khiển** khác có thể quan sát dữ liệu được báo cáo và thực hiện các hành động của riêng mình.
 
-- Trong ví dụ về bộ điều chỉnh nhiệt, nếu phòng rất lạnh thì một **controller** khác cũng có thể bật máy sưởi chống đóng băng. Đối với các cluster Kubernetes, bộ điều khiển gián tiếp làm việc với các công cụ quản lý địa chỉ IP, dịch vụ lưu trữ, API của nhà cung cấp dịch vụ đám mây và các dịch vụ khác bằng cách mở rộng Kubernetes để triển khai điều đó.
+- Trong ví dụ về bộ điều chỉnh nhiệt, nếu phòng rất lạnh thì một **controller** khác cũng có thể bật máy sưởi chống đóng băng. Đối với các cluster Kubernetes, controller gián tiếp làm việc với các công cụ quản lý địa chỉ IP, dịch vụ lưu trữ, API của nhà cung cấp dịch vụ đám mây và các dịch vụ khác bằng cách mở rộng Kubernetes để triển khai điều đó.
+
+### **Trạng thái mong muốn và trạng thái hiện tại**
+Kubernetes xem xét hệ thống theo góc nhìn điện toán đám mây, và do đó có thể xử lý các thay đổi.
+
+Cụm của bạn có thể thay đổi bất kỳ lúc nào khi công việc diễn ra và các vòng lặp điều khiển tự động khắc phục lỗi. Điều này có nghĩa: cụm của bạn có thể không bao giờ đạt đến trạng thái ổn định.
+
+Miễn là controller cụm đang chạy và có thể thực hiện các thay đổi có ích, tính ổn định của trạng thái tổng thể không quan trọng.
+
+### **Thiết kế**
+Theo nguyên lý thiết kế, Kubernetes sử dụng nhiều controller, mỗi controller quản lý một khía cạnh cụ thể của trạng thái cụm. Thông thường nhất, một vòng lặp điều khiển (hoặc bộ điềuk hiển) cụ thể sử dụng một loại tài nguyên làm trạng thái mong muốn của nó và có một loại tài nguyên khác mà nó quản lý để tạo ra trạng thái mong muốn đó.
+
+_**Ví dụ:** Controller cho Jobs theo dõi các đối tượng Job (để phát hiện công việc mới) và các đối tượng Pod (để chạy Jobs, sau đó xem khi nào công việc hoàn thành). Trong trường hợp này, thứ gì đó khác tạo ra Jobs, trong khi Job controller tạo ra Pod._
+
+{{% notice note %}}
+Có thể có nhiều controller cùng tạo hoặc cập nhật chung một loại đối tượng. Thực tế, ở bên dưới, bộ điều khiển Kubernetes đảm bảo rằng chúng chỉ chú ý đến các tài nguyên được liên kết với tài nguyên điều khiển của chúng.\
+![Kubernetes Controllers](/EKS-Workshop-1/images/part1/1/3/0003.png?featherlight=false&width=60pc)
+Ví dụ, bạn có thể có Deployments và Jobs; cả hai đều tạo ra Pods. Bộ điều khiển Job không xóa các Pods mà Deployment của bạn đã tạo, vì có thông tin (nhãn) mà bộ điều khiển có thể sử dụng để phân biệt các Pods đó.
+{{% /notice %}}
+
+### **Những cách thức chạy bộ điều khiển**
+Kubernetes đi kèm với một bộ điều khiển tích hợp chạy bên trong kube-controller-manager. Các bộ điều khiển tích hợp này cung cấp các hành vi cốt lõi quan trọng.
+
+Bộ điều khiển Deployment và bộ điều khiển Job là các ví dụ về bộ điều khiển đi kèm như một phần của chính Kubernetes (bộ điều khiển "tích hợp"). Kubernetes cho phép bạn chạy một tầng điều khiển dự phòng, do đó nếu bất kỳ bộ điều khiển tích hợp nào bị lỗi, một phần khác của tầng điều khiển sẽ tiếp quản công việc.
+
+Bạn cũng sẽ thấy các bộ điều khiển chạy bên ngoài tầng điều khiển để mở rộng Kubernetes. Hoặc, nếu muốn, bạn có thể tự viết một bộ điều khiển mới. Bạn có thể chạy bộ điều khiển của riêng mình dưới dạng một bộ Pod hoặc bên ngoài Kubernetes. Bộ điều khiển nào phù hợp nhất sẽ phụ thuộc vào chức năng của bộ điều khiển cụ thể đó.

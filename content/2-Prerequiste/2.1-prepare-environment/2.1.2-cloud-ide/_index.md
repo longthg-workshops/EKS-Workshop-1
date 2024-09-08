@@ -7,7 +7,7 @@ pre: "<b> 2.1.2 </b>"
 ---
 
 
-{{% notice note %}}
+{{% notice info %}}
 Provisioning this workshop environment in your AWS account will create resources and **there will be cost associated with them**. The cleanup section provides a guide to remove them, preventing further charges.
 {{% /notice %}}
 
@@ -25,7 +25,7 @@ Use the AWS CloudFormation quick-create links below to launch the desired templa
 
 These instructions have been tested in the AWS regions listed above and are not guaranteed to work in others without modification.
 
-{{% notice note %}}
+{{% notice info %}}
 The nature of the workshop material means that the IDE EC2 instance requires broad IAM permissions in your account, for example creating IAM roles. Before continuing please review the IAM permissions that will be provided to the IDE instance in the CloudFormation template. \
 We are continuously working to optimize the IAM permissions. Please raise a [GitHub issue](https://github.com/aws-samples/eks-workshop-v2/issues) with any suggestions for improvement.
 {{% /notice %}}

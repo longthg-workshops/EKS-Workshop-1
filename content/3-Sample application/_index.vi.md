@@ -6,9 +6,9 @@ chapter: false
 pre: "<b> 3. </b>"
 ---
 
-Chào mừng bạn đến với lab thực hành đầu tiên trong workshop **EKS**. Mục tiêu của bài tập này là làm quen với ứng dụng mẫu mà chúng ta sẽ sử dụng cho nhiều bài lab tiếp theo và qua đó đề cập đến một số khái niệm cơ bản liên quan đến triển khai workloads trên **EKS**. Chúng ta sẽ khám phá kiến trúc của ứng dụng và triển khai các thành phần vào cluster **EKS** của chúng ta.
+Chào mừng bạn đến với lab thực hành đầu tiên trong workshop **EKS**. Mục tiêu của bài tập này là làm quen với ứng dụng mẫu mà chúng ta sẽ sử dụng cho nhiều bài lab tiếp theo và qua đó đề cập đến một số khái niệm cơ bản liên quan đến triển khai workloads trên **EKS**. Chúng ta sẽ tìm hiểu kiến trúc của ứng dụng và triển khai các thành phần vào cluster **EKS** của chúng ta.
 
-Hãy triển khai workload đầu tiên của bạn vào cluster **EKS** trong môi trường lab của bạn và khám phá!
+Hãy triển khai workload đầu tiên của bạn vào cluster **EKS** trong môi trường lab của bạn và khám phá !
 
 Trước khi chúng ta bắt đầu, chúng ta cần chạy lệnh sau để chuẩn bị môi trường **Cloud9** và cluster **EKS** của chúng ta:
 
@@ -26,7 +26,7 @@ Bạn sẽ thấy trong các lab tiếp theo, chúng ta cũng sẽ chạy lệnh
 #### Sử Dụng Ứng Dụng Mẫu Trong AWS và Kubernetes
 
 Đa số các lab trong workshop này sử dụng một ứng dụng mẫu chung để cung cấp các thành phần container thực tế mà chúng ta có thể làm việc trong suốt các bài tập. Ứng dụng mẫu mô hình một ứng dụng cửa hàng web đơn giản, nơi khách hàng có thể duyệt một danh mục, thêm các mặt hàng vào giỏ hàng của họ và hoàn tất một đơn hàng thông qua quá trình thanh toán.
-
+s
 ![EKS](/EKS-Workshop-1/images/part3/00017.png?featherlight=false&width=90pc)
 
 Ứng dụng có một số thành phần và phụ thuộc:

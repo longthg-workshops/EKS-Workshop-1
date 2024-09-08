@@ -40,7 +40,7 @@ Now that the cluster is ready, head to the [Navigating the labs](/docs/introduct
 
 ### Cleaning Up (steps once you are done with the Workshop)
 
-{{% notice note %}}
+{{% notice info %}}
 The following demonstrates how you will later clean up resources once you are done using the EKS cluster you created in previous steps to complete the modules.  
 {{% /notice %}}
 

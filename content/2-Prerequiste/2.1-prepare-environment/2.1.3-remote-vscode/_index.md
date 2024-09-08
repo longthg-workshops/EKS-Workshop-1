@@ -16,7 +16,7 @@ First, you need to enter the [EC2 Console](console.aws.amazon.com/ec2/home). On 
 
 On **_Create Key Pair_**:
 - At _Name_, enter any name for your key pair.
-- Tiếp đến, chọn loại a key type and the _.pem_ format.
+- Next, choose a key type and the _.pem_ format.
 - Click _Create key pair_ at the bottom to proceed to create your key pair.
 
 ![](/EKS-Workshop-1/images/2/1/3/002.jpg?width=50pc)

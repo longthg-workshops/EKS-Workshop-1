@@ -43,8 +43,9 @@ Bây giờ cluster đã sẵn sàng, hãy đi đến [Bắt đầu](/docs/introd
 
 #### Dọn Dẹp (các bước sau khi bạn hoàn thành Workshop)
 
+{{% notice info %}}
 Dưới đây là cách bạn sẽ dọn dẹp tài nguyên sau này khi bạn đã sử dụng xong Cluster EKS bạn đã tạo trong các bước trước để hoàn thành các module.  
-
+{{% /notice %}}
 
 Trước khi xóa môi trường Cloud9, chúng ta cần dọn dẹp cluster mà chúng ta đã thiết lập trong các bước trước đó.
 
