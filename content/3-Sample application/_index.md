@@ -1,18 +1,18 @@
 ---
 title: "Sample Aplication"
 date: "`r Sys.Date()`"
-weight: 4
+weight: 3
 chapter: false
 pre: "<b> 3. </b>"
 ---
 
 Most of the labs in this workshop use a common sample application to provide actual container components that we can work on during the exercises. The sample application models a simple web store application, where customers can browse a catalog, add items to their cart and complete an order through the checkout process.
 
-![EKS](/EKS-Workshop-1/images/part3/00017.png?featherlight=false&width=90pc)
+![EKS](../images/part3/00017.png?featherlight=false&width=90pc)
 
 The application has several components and dependencies:
 
-![EKS](/EKS-Workshop-1/images/part3/00018.png?featherlight=false&width=60pc)
+![EKS](../images/part3/00018.png?featherlight=false&width=60pc)
 
 | Component     | Description                                                                                   |
 | ------------- | --------------------------------------------------------------------------------------------- |

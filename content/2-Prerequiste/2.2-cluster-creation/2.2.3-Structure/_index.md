@@ -23,11 +23,11 @@ You should start each lab from the first page. Starting in the middle of a lab w
 
 Once you have accessed the Cloud9 IDE, we recommend you use the **+** button and select **New Terminal** to open a new full screen terminal window.
 
-![EKS](/EKS-Workshop-1/images/part2/3/00013.png?featherlight=false&width=90pc)
+![EKS](../../../images/part2/3/00013.png?featherlight=false&width=90pc)
 
 This will open a new tab with a fresh terminal.
 
-![EKS](/EKS-Workshop-1/images/part2/3/00014.png?featherlight=false&width=90pc)
+![EKS](../../../images/part2/3/00014.png?featherlight=false&width=90pc)
 
 You may also close the small terminal at the bottom if you wish.
 

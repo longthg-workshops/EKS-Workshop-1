@@ -1,14 +1,14 @@
 ---
 title: "Microservices on Kubernetes"
 date: "`r Sys.Date()`"
-weight: 6
+weight: 5
 chapter: false
 pre: "<b> 5. </b>"
 ---
 
 Now that we're familiar with the overall architecture of the sample application, how will we initially deploy this in to EKS? Let's explore some of the Kubernetes building blocks by looking at the **catalog** component:
 
-![Catalog microservice in Kubernetes](/EKS-Workshop-1/images/part5/00019.png?featherlight=false&width=60pc)
+![Catalog microservice in Kubernetes](../images/part5/00019.png?featherlight=false&width=60pc)
 
 There are a number of things to consider in this diagram:
 
@@ -20,6 +20,6 @@ There are a number of things to consider in this diagram:
 
 Each of the components in the microservices architecture is conceptually similar to the catalog, using Deployments to manage application workload Pods and Services to route traffic to those Pods. If we expand out our view of the architecture we can consider how traffic is routed throughout the broader system:
 
-![Microservices in Kubernetes](/EKS-Workshop-1/images/part5/00020.png?featherlight=false&width=60pc)
+![Microservices in Kubernetes](../images/part5/00020.png?featherlight=false&width=60pc)
 
 The **ui** component receives HTTP requests from, for example, a users browser. It then makes HTTP requests to other API components in the architecture to fulfill that request and returns a response to the user. Each of the downstream components may have their own data stores or other infrastructure. The Namespaces are a logical grouping of the resources for each microservice and also act as a soft isolation boundary, which can be used to effectively implement controls using Kubernetes RBAC and Network Policies.

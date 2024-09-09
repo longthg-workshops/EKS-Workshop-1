@@ -1,7 +1,7 @@
 ---
 title: "Lab Components"
 date: "`r Sys.Date()`"
-weight: 5
+weight: 4
 chapter: false
 pre: "<b> 4. </b>"
 ---

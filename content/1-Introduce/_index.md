@@ -1,7 +1,7 @@
 ---
 title: "Introduction"
 date: "`r Sys.Date()`"
-weight: 2
+weight: 1
 chapter: false
 pre: "<b> 1. </b>"
 ---
@@ -14,7 +14,7 @@ The name Kubernetes originates from Greek, meaning helmsman or pilot. K8s as an 
 ### Historical context for Kubernetes
 Let's take a look at why Kubernetes is so useful by going back in time.
 
-![Application deployment forms](/EKS-Workshop-1/images/part1/00010.svg?featherlight=false&width=60pc)
+![Application deployment forms](../images/part1/00010.svg?featherlight=false&width=60pc)
 
 #### **Traditional deployment era:**
 

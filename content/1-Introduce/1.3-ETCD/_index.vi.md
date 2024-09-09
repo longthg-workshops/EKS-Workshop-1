@@ -8,7 +8,7 @@ pre: "<b> 1.3 </b>"
 
 - **ETCD** là một hệ thống lưu trữ **key-value** phân tán, đáng tin cậy, đơn giản, an toàn và nhanh chóng.
 
-![Kubernetes](/EKS-Workshop-1/images/part1/3/0004.png?featherlight=false&width=60pc)
+![Kubernetes](../../images/part1/3/0004.png?featherlight=false&width=60pc)
 
 ### **Key-Value Store** là gì?
 - Từ trước đến nay, **Key-Value Store** là cơ sở dữ liệu được lưu trữ dưới dạng bảng, bạn có thể đã nghe về **SQL** hoặc cơ sở dữ liệu quan hệ. Chúng lưu trữ dữ liệu theo dòng và cột.

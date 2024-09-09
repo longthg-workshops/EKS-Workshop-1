@@ -12,7 +12,9 @@ Kubelet là một trong những thành phần quan trọng của Kubernetes. Nó
 
 Mặc định, Kubeadm không triển khai Kubelet. Bạn cần phải tự tải về và cài đặt nó.
 
-![Kubernetes](/EKS-Workshop-1/images/part1/7/0007.png?featherlight=false&width=60pc)
+![Kubernetes](../../images/part1/7/0007.png?featherlight=false&width=60pc)
+
+### Cài đặt Kubelet
 
 Để cài đặt Kubelet, bạn có thể tải file nhị phân từ trang phát hành Kubernetes [tại đây](https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/). Ví dụ: Để tải về Kubelet v1.13.0, sử dụng lệnh sau.
 

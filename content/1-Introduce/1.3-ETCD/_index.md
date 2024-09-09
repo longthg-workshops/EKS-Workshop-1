@@ -9,6 +9,8 @@ pre: "<b> 1.3 </b>"
 ### What is a ETCD?
 - ETCD is a distributed reliable key-value store that is simple, secure & Fast.
 
+![Kubernetes](../../images/part1/3/0004.png?featherlight=false&width=60pc)
+
 ### What is a Key-Value Store
 - Traditionally, databases have been in tabular format, you must have heard about SQL or Relational databases. They store data in rows and columns
 

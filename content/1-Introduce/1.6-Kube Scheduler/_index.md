@@ -15,7 +15,7 @@ In this section, we will take a look at kube-scheduler.
 
 - **kube-scheduler** plays an important role in resource management and ensuring that pods are allocated efficiently across nodes.
 
-![Kube-scheduler](/EKS-Workshop-1/images/part1/6/0006.ppm?featherlight=false&width=60pc)
+![Kube-scheduler](../../images/part1/6/0006.ppm?featherlight=false&width=60pc)
 
 ### Install kube-scheduler - Manual
 - Download the kubescheduler binary from the kubernetes release pages [kube-scheduler](https://storage.googleapis.com/kubernetes-release/release/v1.13.0/bin/linux/amd64/kube-scheduler). For example: To download kube-scheduler v1.13.0, Run the below command.

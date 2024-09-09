@@ -1,7 +1,7 @@
 ---
 title: "Ứng dụng mẫu"
 date: "`r Sys.Date()`"
-weight: 4
+weight: 3
 chapter: false
 pre: "<b> 3. </b>"
 ---
@@ -27,11 +27,11 @@ Bạn sẽ thấy trong các lab tiếp theo, chúng ta cũng sẽ chạy lệnh
 
 Đa số các lab trong workshop này sử dụng một ứng dụng mẫu chung để cung cấp các thành phần container thực tế mà chúng ta có thể làm việc trong suốt các bài tập. Ứng dụng mẫu mô hình một ứng dụng cửa hàng web đơn giản, nơi khách hàng có thể duyệt một danh mục, thêm các mặt hàng vào giỏ hàng của họ và hoàn tất một đơn hàng thông qua quá trình thanh toán.
 s
-![EKS](/EKS-Workshop-1/images/part3/00017.png?featherlight=false&width=90pc)
+![EKS](../images/part3/00017.png?featherlight=false&width=90pc)
 
 Ứng dụng có một số thành phần và phụ thuộc:
 
-![EKS](/EKS-Workshop-1/images/part3/00018.png?featherlight=false&width=60pc)
+![EKS](../images/part3/00018.png?featherlight=false&width=60pc)
 
 | Thành Phần | Mô Tả                                                                 |
 |-----------|-----------------------------------------------------------------------------|

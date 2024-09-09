@@ -15,7 +15,7 @@ Let’s go back in time to the beginning of the container era. In the beginning,
 And then Kubernetes grew in popularity as a container orchestrator and now other container runtimes like `rkt` wanted in so Kubernetes users needed it to work with container runtimes that are other than just Docker, and so Kubernetes introduced an interface called container runtime interface or CRI, so CRI allowed any vendor to work as a container runtime for Kubernetes as long as they adhere to the OCI standards.
 So OCI stands for Open Container Initiative and it consists of an image spec and a runtime spec. Image spec means the specifications on how an image should be built. It defines the specifications on how an image should be built and the runtime spec defines the standards on how any container runtime should be developed so keeping these standards in mind, anyone can build a container runtime that can be used by anybody to work with Kubernetes, so that was the idea.
 
-![Docker and Containerd](/EKS-Workshop-1/images/part1/2/0003.png?featherlight=false&width=60pc)
+![Docker and Containerd](../../images/part1/2/0003.png?featherlight=false&width=60pc)
 
 So `rkt` and other container runtimes that adhere to the OCI standards were now supported as container runtimes for Kubernetes via the CRI, however Docker wasn’t built to support  the CRI standards, remember Docker was built way before CRI was introduced and Docker still was the dominant container tool used by most, so Kubernetes had to continue to support Docker as well and so Kubernetes introduced what is known as `dockershim` which was a hacky but temporary way to support Docker outside of the CRI.
 

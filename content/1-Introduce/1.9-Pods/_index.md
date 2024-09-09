@@ -10,6 +10,8 @@ In the **Kubernetes** system, **Pods** are an important concept. Kubernetes does
 
 Each Pod in Kubernetes contains one or more containers, but typically they consist of a single container each, and that is the instance of the application you are running. Pods will have a one-to-one relationship with the containers running your application.
 
+![Kubernetes Pods](../../images/part1/9/0009.png?featherlight=false&width=60pc)
+
 ### Multi-Container PODs
 - A single pod can have multiple containers except for the fact that they are usually not multiple containers of the **`same kind`**.
 
