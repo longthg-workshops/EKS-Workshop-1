@@ -10,7 +10,7 @@ pre: "<b> 1.6 </b>"
 
 - **kube-scheduler** chịu trách nhiệm lên lịch cho các pod trên các node. **kube-scheduler** chỉ quyết định pod nào sẽ được đặt trên node nào. Nó không thực sự đặt pod lên các node, đó là công việc của **kubelet**.
 
-![Kube-scheduler](../../images/part1/6/0006.ppm?featherlight=false&width=60pc)
+![Kube-scheduler](../../../../images/part1/6/0006.ppm?featherlight=false&width=60pc)
 
 #### Tại sao bạn cần một trình lên lịch (Scheduler)?
 

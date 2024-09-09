@@ -1,9 +1,9 @@
 ---
 title: "Other Components"
 date: "`r Sys.Date()`"
-weight: 7
+weight: 5
 chapter: false
-pre: "<b> 7. </b>"
+pre: "<b> 3.5 </b>"
 ---
 
 

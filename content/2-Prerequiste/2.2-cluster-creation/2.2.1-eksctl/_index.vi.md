@@ -13,7 +13,7 @@ _**Đây là cách dễ nhất để bắt đầu, và được khuyến nghị 
 Tiện ích **eksctl** đã được cài đặt sẵn trong Môi trường của bạn, vì vậy chúng ta có thể ngay lập tức tạo ra cluster. Đây là cấu hình sẽ được sử dụng để xây dựng cluster:
 
 ```file hidePath=true
-manifests/../cluster/eksctl/cluster.yaml
+manifests/../../cluster/eksctl/cluster.yaml
 ```
 
 Dựa trên cấu hình này, **eksctl** sẽ:

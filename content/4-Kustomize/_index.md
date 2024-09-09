@@ -1,9 +1,9 @@
 ---
 title: "Kustomize"
 date: "`r Sys.Date()`"
-weight: 8
+weight: 4
 chapter: false
-pre: "<b> 8. </b>"
+pre: "<b> 4. </b>"
 ---
 
 {{% notice note %}}

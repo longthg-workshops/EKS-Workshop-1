@@ -1,9 +1,9 @@
 ---
 title: "Lab Components"
 date: "`r Sys.Date()`"
-weight: 4
+weight: 2
 chapter: false
-pre: "<b> 4. </b>"
+pre: "<b> 3.2 </b>"
 ---
 
 Before a workload can be deployed to a Kubernetes distribution like EKS it first must be packaged as a container image and published to a container registry. Basic container topics like this are not covered as part of this workshop, and the sample application has container images already available in Amazon Elastic Container Registry for the labs we'll complete today.

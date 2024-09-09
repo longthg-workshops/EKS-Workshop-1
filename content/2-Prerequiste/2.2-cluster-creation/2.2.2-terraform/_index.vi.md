@@ -17,25 +17,25 @@ CLI **terraform** đã được cài đặt sẵn trong Môi trường Amazon Cl
 Tập tin `providers.tf` cấu hình các nhà cung cấp Terraform mà sẽ cần để xây dựng hạ tầng. Trong trường hợp này, của chúng ta sử dụng các nhà cung cấp **aws**, **kubernetes** và **helm**:
 
 ```file hidePath=true
-manifests/../cluster/terraform/providers.tf
+manifests/../../cluster/terraform/providers.tf
 ```
 
 Tập tin `main.tf` thiết lập một số nguồn dữ liệu Terraform để chúng ta có thể lấy thông tin tài khoản AWS và region hiện đang được sử dụng, cũng như một số thẻ mặc định:
 
 ```file hidePath=true
-manifests/../cluster/terraform/main.tf
+manifests/../../cluster/terraform/main.tf
 ```
 
 Cấu hình `vpc.tf` sẽ đảm bảo hạ tầng VPC của chúng ta được tạo ra:
 
 ```file hidePath=true
-manifests/../cluster/terraform/vpc.tf
+manifests/../../cluster/terraform/vpc.tf
 ```
 
 Cuối cùng, tập tin `eks.tf` chỉ định cấu hình cụm EKS của chúng tôi, bao gồm một Nhóm Node Quản lý:
 
 ```file hidePath=true
-manifests/../cluster/terraform/eks.tf
+manifests/../../cluster/terraform/eks.tf
 ```
 
 #### Tạo môi trường workshop với Terraform

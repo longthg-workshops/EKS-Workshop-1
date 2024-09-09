@@ -1,9 +1,9 @@
 ---
 title: "Các thành phần khác"
 date: "`r Sys.Date()`"
-weight: 7
+weight: 5
 chapter: false
-pre: "<b> 7. </b>"
+pre: "<b> 3.5 </b>"
 ---
 
 Trong bài thực hành này, chúng ta sẽ triển khai phần còn lại của ứng dụng mẫu một cách hiệu quả bằng cách sử dụng sức mạnh của **Kustomize**. File kustomization sau đây cho thấy cách bạn có thể tham chiếu đến các **kustomizations** khác và triển khai nhiều thành phần cùng nhau:

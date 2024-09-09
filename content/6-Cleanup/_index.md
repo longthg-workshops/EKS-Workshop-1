@@ -1,9 +1,9 @@
 ---
 title: "Cleanup"
 date: "`r Sys.Date()`"
-weight: 10
+weight: 6
 chapter: false
-pre: "<b> 10. </b>"
+pre: "<b> 6. </b>"
 ---
 
 Make sure you have run the respective clean up instructions for the mechanism you used to provision the lab EKS cluster before proceeding, as instructed in [2.1](../2-Prerequiste/2.1-eksctl/) or [2.2](../2-Prerequiste/2.2-terraform/) (depending on whether you use `eksctl` or `Terraform` to deploy your cluster).

@@ -1,9 +1,9 @@
 ---
 title: "Helm"
 date: "`r Sys.Date()`"
-weight: 9
+weight: 5
 chapter: false
-pre: "<b> 9. </b>"
+pre: "<b> 5. </b>"
 ---
 
 Mặc dù chúng ta chủ yếu tương tác với tùy chỉnh trong bộ workshop này, sẽ có những tình huống Helm được sử dụng để cài đặt một số gói nhất định trong cụm EKS. Trong bài thực hành này, chúng tôi giới thiệu ngắn gọn về Helm cùng cách sử dụng nó để cài đặt một ứng dụng đóng gói sẵn.

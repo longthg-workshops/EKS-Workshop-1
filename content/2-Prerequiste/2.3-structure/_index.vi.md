@@ -3,23 +3,23 @@ title: "Cấu trúc workshop"
 date: "`r Sys.Date()`"
 weight: 3
 chapter: false
-pre: "<b> 2.2.3 </b>"
+pre: "<b> 2.3 </b>"
 ---
 
-#### Hướng dẫn sử dụng trang web và nội dung được cung cấp
+### Giới thiệu về cấu trúc các bài lab
 
 Nội dung của hội thảo này bao gồm:
 
 1. Các bài tập thực hành cá nhân
 2. Nội dung hỗ trợ giải thích các khái niệm liên quan đến các bài thực hành
 
-Các bài tập thực hành được thiết kế một cách sao cho bạn có thể chạy bất kỳ modules nào như một bài tập độc lập. Các bài tập thực hành sẽ được hiển thị trong thanh bên trái và được đánh dấu bằng biểu tượng ở đây:
+Các bài tập thực hành được thiết kế một cách sao cho bạn có thể chạy bất kỳ modules nào như một bài tập độc lập.
 
-Module này chứa một bài lab duy nhất có tên là **Bắt đầu** sẽ được hiển thị ở phía trái màn hình của bạn.
-
+{{% notice note %}}
 Bạn nên bắt đầu mỗi bài lab từ trang đầu tiên. Bắt đầu ở giữa một bài lab sẽ gây ra các biểu hiện không đoán trước được.
+{{% /notice %}}
 
-#### Cloud9 IDE
+### Cloud9 IDE
 
 Sau khi bạn đã truy cập vào Cloud9 IDE, chúng tôi khuyến nghị bạn sử dụng nút **+** và chọn **New Terminal** để mở một cửa sổ terminal mới toàn màn hình.
 
@@ -32,7 +32,7 @@ Sau khi bạn đã truy cập vào Cloud9 IDE, chúng tôi khuyến nghị bạn
 
 Bạn cũng có thể đóng terminal nhỏ ở dưới nếu bạn muốn.
 
-#### Các lệnh Terminal
+### Các lệnh Terminal
 
 Hầu hết các tương tác mà bạn sẽ thực hiện trong hội thảo này sẽ được thực hiện bằng các lệnh terminal, mà bạn có thể gõ thủ công hoặc sao chép/dán vào terminal Cloud9 IDE. Bạn sẽ thấy các lệnh terminal được hiển thị như sau:
 
@@ -54,6 +54,6 @@ ip-10-42-11-198.us-west-2.compute.internal   Ready    <none>   6h      vVAR::KUB
 
 Giữ chuột, kéo qua lệnh cần sao chép và nhấn Ctrl+C để sao chép. Hãy thử xem!
 
-#### Thiết lập lại EKS cluster của bạn
+### Thiết lập lại EKS cluster của bạn
 
 Trong trường hợp bạn cấu hình cluster theo cách khiến nó không hoạt động, bạn được cung cấp một cơ chế để thiết lập lại EKS cluster của mình sao cho tốt nhất có thể, có thể chạy bất kỳ lúc nào. Đơn giản chỉ cần chạy lệnh `prepare-environment` và đợi cho đến khi nó hoàn tất. Điều này có thể mất vài phút tùy thuộc vào trạng thái của cluster của bạn khi chạy lệnh này.

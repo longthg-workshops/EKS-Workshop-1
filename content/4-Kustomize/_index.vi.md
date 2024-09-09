@@ -1,9 +1,9 @@
 ---
 title: "Kustomize"
 date: "`r Sys.Date()`"
-weight: 8
+weight: 4
 chapter: false
-pre: "<b> 8. </b>"
+pre: "<b> 4. </b>"
 ---
 
 #### Kustomize
@@ -16,7 +16,7 @@ Ví dụ, hãy xem tệp mẫu sau cho `checkout` Deployment:
 manifests/base-application/checkout/deployment.yaml
 ```
 
-Tệp này đã được áp dụng trong bài lab [Getting Started](../getting-started) trước đó, nhưng giả sử chúng ta muốn mở rộng thành phần này theo chiều ngang bằng cách cập nhật trường `replicas` sử dụng Kustomize. Thay vì cập nhật tệp YAML này thủ công, chúng ta sẽ sử dụng Kustomize để cập nhật trường `spec/replicas` từ 1 thành 3.
+Tệp này đã được áp dụng trong bài lab [Getting Started](../../getting-started) trước đó, nhưng giả sử chúng ta muốn mở rộng thành phần này theo chiều ngang bằng cách cập nhật trường `replicas` sử dụng Kustomize. Thay vì cập nhật tệp YAML này thủ công, chúng ta sẽ sử dụng Kustomize để cập nhật trường `spec/replicas` từ 1 thành 3.
 
 Để làm điều này, chúng ta sẽ áp dụng kustomization sau.
 
