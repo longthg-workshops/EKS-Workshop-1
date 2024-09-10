@@ -63,7 +63,7 @@ _**Ví dụ:** Controller cho Jobs theo dõi các đối tượng Job (để ph�
 
 {{% notice note %}}
 Có thể có nhiều controller cùng tạo hoặc cập nhật chung một loại đối tượng. Thực tế, ở bên dưới, bộ điều khiển Kubernetes đảm bảo rằng chúng chỉ chú ý đến các tài nguyên được liên kết với tài nguyên điều khiển của chúng.\
-![Kubernetes Controllers](../../../../../../images/part1/1/3/0003.png?featherlight=false&width=60pc)
+![Kubernetes Controllers](../../../../images/part1/1/3/0003.png?featherlight=false&width=60pc)
 Ví dụ, bạn có thể có Deployments và Jobs; cả hai đều tạo ra Pods. Bộ điều khiển Job không xóa các Pods mà Deployment của bạn đã tạo, vì có thông tin (nhãn) mà bộ điều khiển có thể sử dụng để phân biệt các Pods đó.
 {{% /notice %}}
 
