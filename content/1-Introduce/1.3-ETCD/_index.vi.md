@@ -19,7 +19,7 @@ pre: "<b> 1.3 </b>"
 
 - Việc cài đặt và bắt đầu với **ETCD** rất dễ dàng.
 
-- Tải xuống file nhị phân phù hợp cho hệ điều hành của bạn từ trang phát hành trên Github ([ETCD Releases](https://github.com/etcd-io/etcd/releases))
+- Tải xuống file thực thi phù hợp với hệ điều hành của bạn từ trang phát hành trên Github ([ETCD Releases](https://github.com/etcd-io/etcd/releases))
 
 - Ví dụ: Để tải xuống **ETCD v3.5.6**, chạy lệnh curl sau:
 
@@ -39,7 +39,7 @@ $ tar xvzf etcd-v3.5.6-linux-amd64.tar.gz
 $ ./etcd
 ```
 
-- Khi bạn khởi động **ETCD**, mặc định nó sẽ lắng nghe trên cổng 2379.
+- Khi khởi động **ETCD**, mặc định nó sẽ tiếp nhận yêu cầu trên cổng 2379.
 
 - Client mặc định đi kèm với **ETCD** là **etcdctl**. Bạn có thể sử dụng nó để lưu trữ và truy xuất cặp **key-value**.
 
@@ -67,9 +67,9 @@ Bộ lưu Dữ Liệu **ETCD** lưu trữ thông tin về cluster như **Nodes**
 
 ### Cài đặt - Thủ công
 
-Nếu bạn thiết lập cluster từ đầu, bạn sẽ triển khai **ETCD** bằng cách tự tải xuống các tệp nhị phân **ETCD**.
+Nếu bạn thiết lập cluster từ số không, bạn sẽ phải triển khai **ETCD** bằng cách tự tải xuống các tệp thực thi **ETCD**.
 
-Cài đặt các tệp nhị phân và cấu hình **ETCD** như một dịch vụ trên node master của bạn.
+Cài đặt các tệp thực thi và cấu hình **ETCD** như một dịch vụ trên node master của bạn.
 
 ```bash
 $ wget -q --https-only "https://github.com/etcd-io/etcd/releases/download/v3.3.11/etcd-v3.3.11-linux-amd64.tar.gz"

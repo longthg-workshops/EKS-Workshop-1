@@ -35,10 +35,10 @@ Sau khi tạo đối tượng Node hoặc kubelet trên một node tự đăng k
   }
 }
 ```
-Kubernetes tạo một đối tượng Node nội bộ (đại diện). Kubernetes kiểm tra xem kubelet đã đăng ký với API Server khớp với trường metadata.name của Node hay chưa. Nếu node khỏe mạnh (tức là tất cả các dịch vụ cần thiết đều đang chạy), thì node đó đủ điều kiện để chạy Pod. Nếu không, node đó sẽ bị bỏ qua đối với bất kỳ hoạt động cụm nào cho đến khi node đó khỏe mạnh.
+Kubernetes tạo một đối tượng Node nội bộ (gọi là "đối tượng đại diện" (representation)). Kubernetes kiểm tra xem kubelet đã đăng ký với API Server khớp với trường metadata.name của Node hay chưa. Nếu node khỏe mạnh (tức là tất cả các dịch vụ cần thiết đều đang chạy), thì node đó đủ điều kiện để chạy Pod. Nếu không, node đó sẽ bị bỏ qua đối với bất kỳ hoạt động cụm nào cho đến khi node đó khỏe mạnh.
 
 ### Tính độc nhất của tên node
-Một Node được xác định bằng tên. Hai Node không thể cùng lúc mang cùng tên. Kubernetes cũng giả định rằng một tài nguyên với một tên gọi là cùng một đối tượng. Trong trường hợp của một Node, ta ngầm định rằng một đại diện sử dụng cùng tên sẽ có cùng trạng thái (ví dụ: cài đặt mạng, nội dung đĩa root) và các thuộc tính như nhãn node. Điều này có thể dẫn đến sự không nhất quán nếu một thể hiện được sửa đổi mà không thay đổi tên của nó. Nếu Node cần được thay thế hoặc áp dụng nhiều cập nhật, đối tượng Node hiện có cần được xóa khỏi máy chủ API trước và thêm lại sau khi cập nhật.
+Một Node được xác định bằng tên. Hai Node không thể cùng lúc mang cùng tên. Kubernetes cũng giả định rằng một tài nguyên với một tên gọi là cùng một đối tượng. Trong trường hợp của một Node, ta ngầm định rằng một đối tượng đại diện sử dụng cùng tên sẽ có cùng trạng thái (ví dụ: cài đặt mạng, nội dung đĩa root) và các thuộc tính như nhãn node. Điều này có thể dẫn đến sự không nhất quán nếu một thể hiện được sửa đổi mà không thay đổi tên của nó. Nếu Node cần được thay thế hoặc áp dụng nhiều cập nhật, đối tượng Node hiện có cần được xóa khỏi máy chủ API trước và thêm lại sau khi cập nhật.
 
 ### Trạng thái node
 Trạng thái của một Node chứa các thông tin sau:

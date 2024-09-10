@@ -13,9 +13,9 @@ Phần này liệt kê các đường giao tiếp giữa máy chủ API và cụ
 ### **Từ Node đến Control Plane**
 - **Kubernetes** áp dụng mô hình API "hub-and-spoke". Tất cả việc sử dụng API từ các node (hoặc các pod được chúng chạy) đều kết thúc tại máy chủ API. Không có thành phần nào khác của control plane được thiết kế để tiết lộ dịch vụ từ xa. Máy chủ API được cấu hình để lắng nghe các kết nối từ xa trên cổng HTTPS an toàn (thông thường là 443) với một hoặc nhiều hình thức xác thực khách hàng được kích hoạt. Một hoặc nhiều hình thức ủy quyền nên được kích hoạt, đặc biệt nếu cho phép yêu cầu ẩn danh hoặc token tài khoản dịch vụ.
 
-- Các node nên được cung cấp chứng chỉ gốc công khai cho cụm để chúng có thể kết nối một cách an toàn đến máy chủ API cùng với các thông tin đăng nhập khách hàng hợp lệ. Một cách tiếp cận tốt là thông tin đăng nhập khách hàng được cung cấp cho kubelet dưới dạng một chứng chỉ khách hàng. Xem khoản bootstrap TLS kubelet để tự động cung cấp chứng chỉ khách hàng cho kubelet.
+- Các node nên được cung cấp chứng chỉ root công khai cho cụm để chúng có thể kết nối một cách an toàn đến máy chủ API cùng với các thông tin đăng nhập khách hàng hợp lệ. Một cách tiếp cận tốt là thông tin đăng nhập khách hàng được cung cấp cho kubelet dưới dạng một chứng chỉ khách hàng. Xem khoản bootstrap TLS kubelet để tự động cung cấp chứng chỉ khách hàng cho kubelet.
 
-- Các pod muốn kết nối đến máy chủ API có thể làm như vậy một cách an toàn bằng cách tận dụng một tài khoản dịch vụ sao cho **Kubernetes** sẽ tự động tiêm chứng chỉ gốc công khai và token bearer hợp lệ vào pod khi nó được khởi tạo. Dịch vụ **Kubernetes** (trong namespace mặc định) được cấu hình với một địa chỉ IP ảo được chuyển hướng (thông qua kube-proxy) đến điểm cuối HTTPS trên máy chủ API.
+- Các pod muốn kết nối đến máy chủ API có thể làm như vậy một cách an toàn bằng cách tận dụng một tài khoản dịch vụ sao cho **Kubernetes** sẽ tự động tiêm chứng chỉ root công khai và token bearer hợp lệ vào pod khi nó được khởi tạo. Dịch vụ **Kubernetes** (trong namespace mặc định) được cấu hình với một địa chỉ IP ảo được chuyển hướng (thông qua kube-proxy) đến điểm cuối HTTPS trên máy chủ API.
 
 - Các thành phần của control plane cũng giao tiếp với máy chủ API qua cổng an toàn.
 
@@ -27,11 +27,11 @@ Phần này liệt kê các đường giao tiếp giữa máy chủ API và cụ
 ### **Máy chủ API đến kubelet**
 Các kết nối từ máy chủ API đến kubelet được sử dụng cho:
 
-- Lấy nhật ký (**logs**) cho các pod.
+- Lấy log cho các pod.
 - Đính kèm (thường qua kubectl) vào các pod đang chạy.
 - Cung cấp chức năng chuyển tiếp cổng của kubelet.
 - Những kết nối này kết thúc tại điểm cuối HTTPS của kubelet. Theo mặc định, máy chủ API không xác minh chứng chỉ phục vụ của kubelet, điều này khiến kết nối dễ bị tấn công man-in-the-middle và không an toàn để vận hành trên các mạng không tin cậy và/hoặc công cộng.
-- Để xác minh kết nối này, sử dụng cờ --kubelet-certificate-authority để cung cấp cho máy chủ API một gói chứng chỉ gốc để sử dụng để xác minh chứng chỉ phục vụ của kubelet.
+- Để xác minh kết nối này, sử dụng cờ --kubelet-certificate-authority để cung cấp cho máy chủ API một gói chứng chỉ root để sử dụng để xác minh chứng chỉ phục vụ của kubelet.
 - Nếu điều đó không khả thi, sử dụng SSH Tunnel giữa máy chủ API và kubelet nếu cần thiết để tránh kết nối qua một mạng không tin cậy hoặc công cộng.
 - Cuối cùng, xác thực và/hoặc ủy quyền kubelet nên được kích hoạt để bảo mật API của kubelet.
 
