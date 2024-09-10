@@ -5,6 +5,8 @@ weight: 1
 chapter: false
 ---
 
+# Làm quen với Amazon Elastic Kubernetes Service
+
 ### Mục đích Workshop
 Workshop này thuộc chuỗi workshop về EKS. Tại đây, chúng tôi cung cấp cái nhìn tổng quan, cũng như giúp bạn làm quen với việc triển khai, cấu hình và vận hành các ứng dụng của bạn trên Kubernetes. Với workshop này, chúng tôi hy vọng bạn sẽ hiểu rõ hơn về cách tạo cụm EKS, thực thi các lệnh và triển khai một số công việc đơn giản trên cụm.
 
