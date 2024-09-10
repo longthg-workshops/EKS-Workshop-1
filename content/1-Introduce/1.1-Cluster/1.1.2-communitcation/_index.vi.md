@@ -36,6 +36,4 @@ Các kết nối từ máy chủ API đến kubelet được sử dụng cho:
 - Cuối cùng, xác thực và/hoặc ủy quyền kubelet nên được kích hoạt để bảo mật API của kubelet.
 
 ### **Máy chủ API đến Node, Pod, và Dịch vụ**
-- Các kết nối từ máy chủ API đến một node, pod, hoặc dịch vụ mặc định là các kết nối HTTP đơn giản và do đó không được xác thực hoặc mã hóa. Chúng có thể được vận hành qua một kết nối HTTPS an toàn bằng cách thêm tiền t
-
-ố https: vào tên node, pod, hoặc dịch vụ trong URL API, nhưng chúng sẽ không xác minh chứng chỉ được cung cấp bởi điểm cuối HTTPS cũng như không cung cấp thông tin đăng nhập khách hàng. Vì vậy, mặc dù kết nối sẽ được mã hóa, nó không cung cấp bất kỳ bảo đảm nào về tính toàn vẹn. Những kết nối này hiện không an toàn để vận hành trên các mạng không tin cậy hoặc công cộng.
+- Các kết nối từ máy chủ API đến một node, pod, hoặc dịch vụ mặc định là các kết nối HTTP đơn giản và do đó không được xác thực hoặc mã hóa. Chúng có thể được vận hành qua một kết nối HTTPS an toàn bằng cách thêm tiền tố https: vào tên node, pod, hoặc dịch vụ trong URL API, nhưng chúng sẽ không xác minh chứng chỉ được cung cấp bởi điểm cuối HTTPS cũng như không cung cấp thông tin đăng nhập khách hàng. Vì vậy, mặc dù kết nối sẽ được mã hóa, nó không cung cấp bất kỳ bảo đảm nào về tính toàn vẹn. Những kết nối này hiện không an toàn để vận hành trên các mạng không tin cậy hoặc công cộng.
