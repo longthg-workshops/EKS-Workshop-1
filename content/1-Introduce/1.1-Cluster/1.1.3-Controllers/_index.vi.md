@@ -14,7 +14,7 @@ Dưới đây là một ví dụ về **vòng lặp điều khiển**: một b�
 
 Trong **Kubernetes**, các **controller** là các **vòng lặp điều khiển** quan sát trạng thái của cluster của bạn, sau đó thực hiện hoặc yêu cầu các thay đổi khi cần thiết. Mỗi **controller** cố gắng di chuyển trạng thái hiện tại của cluster gần hơn với trạng thái mong muốn.
 
-![Kubernetes Controller](../../../../../../images/part1/1/3/0002.png?featherlight=false&width=60pc)
+![Kubernetes Controller](../../../../images/part1/1/3/0002.png?featherlight=false&width=60pc)
 
 ### **Mô hình Controller**
 - Một **controller** theo dõi ít nhất một loại tài nguyên Kubernetes. Những đối tượng này có một trường **spec** đại diện cho trạng thái mong muốn. Các **controller** cho tài nguyên đó chịu trách nhiệm làm cho trạng thái hiện tại gần hơn với trạng thái mong muốn.
