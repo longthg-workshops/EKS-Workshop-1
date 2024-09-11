@@ -75,9 +75,8 @@ Tại thư mục chính của chart, có một tệp với tên `value.yaml`. T�
 2. Sử dụng cờ `--set` với cặp khoá - giá trị `key=value`.
 
 Chúng ta kết hợp cả hai bằng các tạo tệp YAML sau:
-```file
-~/environment/eks-workshop/modules/introduction/helm/values.yaml
-```
+
+**_~/environment/eks-workshop/modules/introduction/helm/values.yaml_**
 ```yaml
 podLabels:
   team: team1

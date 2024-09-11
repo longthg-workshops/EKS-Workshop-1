@@ -1,9 +1,9 @@
 ---
 title: "Microservices on Kubernetes"
 date: "`r Sys.Date()`"
-weight: 4
+weight: 3
 chapter: false
-pre: "<b> 3.4 </b>"
+pre: "<b> 3.3 </b>"
 ---
 
 Now that we're familiar with the overall architecture of the sample application, how will we initially deploy this in to EKS? Let's explore some of the Kubernetes building blocks by looking at the **catalog** component:

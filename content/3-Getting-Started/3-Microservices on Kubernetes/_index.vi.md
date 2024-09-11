@@ -1,9 +1,9 @@
 ---
 title: "Microservices trên Kubernetes"
 date: "`r Sys.Date()`"
-weight: 4
+weight: 3
 chapter: false
-pre: "<b> 3.4 </b>"
+pre: "<b> 3.3 </b>"
 ---
 
 #### Microservices trên Kubernetes
