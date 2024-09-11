@@ -12,8 +12,72 @@ pre: "<b> 4. </b>"
 
 Ví dụ, hãy xem tệp mẫu sau cho `checkout` Deployment:
 
-```file
-manifests/base-application/checkout/deployment.yaml
+**_~/environment/eks-workshop/base-application/checkout/deployment.yaml_**
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: checkout
+  labels:
+    app.kubernetes.io/created-by: eks-workshop
+    app.kubernetes.io/type: app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: checkout
+      app.kubernetes.io/instance: checkout
+      app.kubernetes.io/component: service
+  template:
+    metadata:
+      annotations:
+        prometheus.io/path: /metrics
+        prometheus.io/port: "8080"
+        prometheus.io/scrape: "true"
+      labels:
+        app.kubernetes.io/name: checkout
+        app.kubernetes.io/instance: checkout
+        app.kubernetes.io/component: service
+        app.kubernetes.io/created-by: eks-workshop
+    spec:
+      serviceAccountName: checkout
+      securityContext:
+        fsGroup: 1000
+      containers:
+        - name: checkout
+          envFrom:
+            - configMapRef:
+                name: checkout
+          securityContext:
+            capabilities:
+              drop:
+                - ALL
+            readOnlyRootFilesystem: true
+          image: "public.ecr.aws/aws-containers/retail-store-sample-checkout:0.4.0"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 30
+            periodSeconds: 3
+          resources:
+            limits:
+              memory: 512Mi
+            requests:
+              cpu: 250m
+              memory: 512Mi
+          volumeMounts:
+            - mountPath: /tmp
+              name: tmp-volume
+      volumes:
+        - name: tmp-volume
+          emptyDir:
+            medium: Memory
 ```
 
 Tệp này đã được áp dụng trong bài lab [Getting Started](../../getting-started) trước đó, nhưng giả sử chúng ta muốn mở rộng thành phần này theo chiều ngang bằng cách cập nhật trường `replicas` sử dụng Kustomize. Thay vì cập nhật tệp YAML này thủ công, chúng ta sẽ sử dụng Kustomize để cập nhật trường `spec/replicas` từ 1 thành 3.
@@ -24,9 +88,82 @@ Tệp này đã được áp dụng trong bài lab [Getting Started](../../getti
 * Tab thứ hai hiển thị một bản xem trước về cách tệp `Deployment/checkout` được cập nhật sau khi kustomization được áp dụng
 * Cuối cùng, tab thứ ba chỉ hiển thị sự khác biệt của những thay đổi đã xảy ra
 
-```kustomization
-modules/introduction/kustomize/deployment.yaml
-Deployment/checkout
+**_modules/introduction/kustomize/deployment.yaml_**
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: checkout
+spec:
+  replicas: 3
+```
+**_Deployment/checkout_**
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/created-by: eks-workshop
+    app.kubernetes.io/type: app
+  name: checkout
+  namespace: checkout
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app.kubernetes.io/component: service
+      app.kubernetes.io/instance: checkout
+      app.kubernetes.io/name: checkout
+  template:
+    metadata:
+      annotations:
+        prometheus.io/path: /metrics
+        prometheus.io/port: "8080"
+        prometheus.io/scrape: "true"
+      labels:
+        app.kubernetes.io/component: service
+        app.kubernetes.io/created-by: eks-workshop
+        app.kubernetes.io/instance: checkout
+        app.kubernetes.io/name: checkout
+    spec:
+      containers:
+        - envFrom:
+            - configMapRef:
+                name: checkout
+          image: public.ecr.aws/aws-containers/retail-store-sample-checkout:0.4.0
+          imagePullPolicy: IfNotPresent
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 30
+            periodSeconds: 3
+          name: checkout
+          ports:
+            - containerPort: 8080
+              name: http
+              protocol: TCP
+          resources:
+            limits:
+              memory: 512Mi
+            requests:
+              cpu: 250m
+              memory: 512Mi
+          securityContext:
+            capabilities:
+              drop:
+                - ALL
+            readOnlyRootFilesystem: true
+          volumeMounts:
+            - mountPath: /tmp
+              name: tmp-volume
+      securityContext:
+        fsGroup: 1000
+      serviceAccountName: checkout
+      volumes:
+        - emptyDir:
+            medium: Memory
+          name: tmp-volume
 ```
 
 Bạn có thể tạo ra YAML Kubernetes cuối cùng áp dụng kustomization này bằng lệnh `kubectl kustomize`, mà gọi `kustomize` được gói kèm với CLI `kubectl`:
@@ -50,8 +187,14 @@ deployment.apps/checkout-redis unchanged
 
 Bạn sẽ nhận thấy một số tài nguyên liên quan đến `checkout` "unchanged", với `deployment.apps/checkout` được "cấu hình". Điều này là có chủ ý — chúng ta chỉ muốn áp dụng các thay đổi vào `deployment` của `checkout`. Điều này xảy ra vì lệnh trước đó thực sự áp dụng hai tệp: `deployment.yaml` của Kustomize mà chúng ta đã thấy ở trên, cũng như tệp `kustomization.yaml` sau đây khớp với tất cả các tệp trong thư mục `~/environment/eks-workshop/base-application/checkout`. Trường `patches` chỉ định tệp cụ thể cần được vá:
 
-```file
-manifests/modules/introduction/kustomize/kustomization.yaml
+**_~/environment/eks-workshop/modules/introduction/kustomize/kustomization.yaml_**
+```yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../../base-application/checkout
+patches:
+  - path: deployment.yaml
 ```
 
 Để kiểm tra xem số bản sao đã được cập nhật, chạy lệnh sau:

@@ -6,21 +6,24 @@ chapter: false
 pre: "<b> 1. </b>"
 ---
 
-### Kubernetes overview
+### Kubernetes
+#### Kubernetes overview
 Kubernetes is a portable, extensible, open source platform for managing containerized workloads and services, that facilitates both declarative configuration and automation. It has a large, rapidly growing ecosystem. Kubernetes services, support, and tools are widely available.
 
 The name Kubernetes originates from Greek, meaning helmsman or pilot. K8s as an abbreviation results from counting the eight letters between the "K" and the "s". Google open-sourced the Kubernetes project in 2014. Kubernetes combines over 15 years of Google's experience running production workloads at scale with best-of-breed ideas and practices from the community.
 
-### Historical context for Kubernetes
+![Kubernetes](../images/part1/kubernetes.webp?width=70pc)
+
+#### Historical context for Kubernetes
 Let's take a look at why Kubernetes is so useful by going back in time.
 
 ![Application deployment forms](../images/part1/00010.svg?featherlight=false&width=60pc)
 
-#### **Traditional deployment era:**
+##### **Traditional deployment era:**
 
 Early on, organizations ran applications on physical servers. There was no way to define resource boundaries for applications in a physical server, and this caused resource allocation issues. For example, if multiple applications run on a physical server, there can be instances where one application would take up most of the resources, and as a result, the other applications would underperform. A solution for this would be to run each application on a different physical server. But this did not scale as resources were underutilized, and it was expensive for organizations to maintain many physical servers.
 
-#### **Virtualized deployment era:**
+##### **Virtualized deployment era:**
 
 As a solution, virtualization was introduced. It allows you to run multiple Virtual Machines (VMs) on a single physical server's CPU. Virtualization allows applications to be isolated between VMs and provides a level of security as the information of one application cannot be freely accessed by another application.
 
@@ -28,7 +31,7 @@ Virtualization allows better utilization of resources in a physical server and a
 
 Each VM is a full machine running all the components, including its own operating system, on top of the virtualized hardware.
 
-#### **Container deployment era:**
+##### **Container deployment era:**
 
 Containers are similar to VMs, but they have relaxed isolation properties to share the Operating System (OS) among the applications. Therefore, containers are considered lightweight. Similar to a VM, a container has its own filesystem, share of CPU, memory, process space, and more. As they are decoupled from the underlying infrastructure, they are portable across clouds and OS distributions.
 
@@ -54,7 +57,7 @@ Containers have become popular because they provide extra benefits, such as:
 
 - **Resource utilization:** high efficiency and density.
 
-### Why need Kubernetes ? What can it do ?
+#### Why need Kubernetes ? What can it do ?
 Containers are a good way to bundle and run your applications. In a production environment, you need to manage the containers that run the applications and ensure that there is no downtime. For example, if a container goes down, another container needs to start. Wouldn't it be easier if this behavior was handled by a system?
 
 That's how Kubernetes comes to the rescue! Kubernetes provides you with a framework to run distributed systems resiliently. It takes care of scaling and failover for your application, provides deployment patterns, and more. For example: Kubernetes can easily manage a canary deployment for your system.
@@ -80,7 +83,7 @@ Storage orchestration Kubernetes allows you to automatically mount a storage sys
 
 - **Designed for extensibility:** Add features to your Kubernetes cluster without changing upstream source code.
 
-### Kubernetes is not
+#### Kubernetes is not
 
 Kubernetes is not a traditional, all-inclusive PaaS (Platform as a Service) system. Since Kubernetes operates at the container level rather than at the hardware level, it provides some generally applicable features common to PaaS offerings, such as deployment, scaling, load balancing, and lets users integrate their logging, monitoring, and alerting solutions. However, Kubernetes is not monolithic, and these default solutions are optional and pluggable. Kubernetes provides the building blocks for building developer platforms, but preserves user choice and flexibility where it is important.
 
@@ -99,3 +102,26 @@ Kubernetes:
 - Does not provide nor adopt any comprehensive machine configuration, maintenance, management, or self-healing systems.
 
 Additionally, Kubernetes is not a mere orchestration system. In fact, it eliminates the need for orchestration. The technical definition of orchestration is execution of a defined workflow: first do A, then B, then C. In contrast, Kubernetes comprises a set of independent, composable control processes that continuously drive the current state towards the provided desired state. It shouldn't matter how you get from A to C. Centralized control is also not required. This results in a system that is easier to use and more powerful, robust, resilient, and extensible.
+
+### Amazon Elastic Kubernetes Service (EKS)
+Amazon Elastic Kubernetes Service (Amazon EKS) is a managed service that eliminates the need to install, operate, and maintain your own Kubernetes control plane on Amazon Web Services (AWS).
+
+![EKS](../images/part1/EKS.png?width=90pc)
+
+#### Features of Amazon EKS
+The following are key features of Amazon EKS:
+
+##### **Secure networking and authentication**
+Amazon EKS integrates your Kubernetes workloads with AWS networking and security services. It also integrates with AWS Identity and Access Management (IAM) to provide authentication for your Kubernetes clusters.
+
+##### **Easy cluster scaling**
+Amazon EKS enables you to scale your Kubernetes clusters up and down easily based on the demand of your workloads. Amazon EKS supports horizontal Pod autoscaling based on CPU or custom metrics, and cluster autoscaling based on the demand of the entire workload.
+
+##### **Managed Kubernetes experience**
+You can make changes to your Kubernetes clusters using eksctl, AWS Management Console, AWS Command Line Interface (AWS CLI), the API, kubectl, and Terraform.
+
+##### **High availability**
+Amazon EKS provides high availability for your control plane across multiple Availability Zones.
+
+##### **Integration with AWS services**
+Amazon EKS integrates with other AWS services, providing a comprehensive platform for deploying and managing your containerized applications. You can also more easily troubleshoot your Kubernetes workloads with various observability tools.

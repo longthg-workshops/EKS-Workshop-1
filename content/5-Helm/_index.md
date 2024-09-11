@@ -97,8 +97,16 @@ There are two common ways to provide values to charts during installation:
 
 Let's combine these methods to update our NGINX release. We'll use this `values.yaml` file:
 
-```file
-manifests/modules/introduction/helm/values.yaml
+**_~/environment/eks-workshop/modules/introduction/helm/values.yaml_**
+```yaml
+podLabels:
+  team: team1
+  costCenter: org1
+
+resources:
+  requests:
+    cpu: 250m
+    memory: 256Mi
 ```
 
 This adds several custom Kubernetes labels to the NGINX pods, as well as setting some resource requests.

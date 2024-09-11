@@ -48,7 +48,7 @@ locals {
 
 Cấu hình `vpc.tf` sẽ đảm bảo hạ tầng VPC của chúng ta được tạo ra:
 
-```file hidePath=true
+```
 locals {
   private_subnets = [for k, v in local.azs : cidrsubnet(var.vpc_cidr, 3, k + 3)]
   public_subnets  = [for k, v in local.azs : cidrsubnet(var.vpc_cidr, 3, k)]

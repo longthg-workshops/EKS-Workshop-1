@@ -1,9 +1,9 @@
 ---
 title: "Triển khai thành phần đầu tiên"
 date: "`r Sys.Date()`"
-weight: 3
+weight: 4
 chapter: false
-pre: "<b> 3.3 </b>"
+pre: "<b> 3.4 </b>"
 ---
 
 #### Triển khai
@@ -61,8 +61,90 @@ statefulset-mysql.yaml
 
 Các tuyên bố này bao gồm **Deployment** cho **API catalog**:
 
-```file
-manifests/base-application/catalog/deployment.yaml
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: catalog
+  labels:
+    app.kubernetes.io/created-by: eks-workshop
+    app.kubernetes.io/type: app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: catalog
+      app.kubernetes.io/instance: catalog
+      app.kubernetes.io/component: service
+  template:
+    metadata:
+      annotations:
+        prometheus.io/path: /metrics
+        prometheus.io/port: "8080"
+        prometheus.io/scrape: "true"
+      labels:
+        app.kubernetes.io/name: catalog
+        app.kubernetes.io/instance: catalog
+        app.kubernetes.io/component: service
+        app.kubernetes.io/created-by: eks-workshop
+    spec:
+      serviceAccountName: catalog
+      securityContext:
+        fsGroup: 1000
+      containers:
+        - name: catalog
+          env:
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: catalog-db
+                  key: username
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: catalog-db
+                  key: password
+          envFrom:
+            - configMapRef:
+                name: catalog
+          securityContext:
+            capabilities:
+              drop:
+                - ALL
+            readOnlyRootFilesystem: true
+            runAsNonRoot: true
+            runAsUser: 1000
+          image: "public.ecr.aws/aws-containers/retail-store-sample-catalog:0.4.0"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 30
+            periodSeconds: 3
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            successThreshold: 3
+            periodSeconds: 5
+          resources:
+            limits:
+              memory: 512Mi
+            requests:
+              cpu: 250m
+              memory: 512Mi
+          volumeMounts:
+            - mountPath: /tmp
+              name: tmp-volume
+      volumes:
+        - name: tmp-volume
+          emptyDir:
+            medium: Memory
 ```
 
 **Deployment** này diễn đạt trạng thái mong muốn của thành phần **API catalog**:
@@ -77,7 +159,23 @@ manifests/base-application/catalog/deployment.yaml
 Các tuyên bố cũng bao gồm **Service** được sử dụng bởi các thành phần khác để truy cập **API catalog**:
 
 ```file
-manifests/base-application/catalog/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: catalog
+  labels:
+    app.kubernetes.io/created-by: eks-workshop
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: catalog
+    app.kubernetes.io/instance: catalog
+    app.kubernetes.io/component: service
 ```
 
 **Service** này:
@@ -111,9 +209,7 @@ catalog   Active   15s
 Chúng ta có thể xem các **Pod** đang chạy trong **namespace** này:
 
 ```bash
-$
-
- kubectl get pod -n catalog
+$ kubectl get pod -n catalog
 NAME                       READY   STATUS    RESTARTS      AGE
 catalog-846479dcdd-fznf5   1/1     Running   2 (43s ago)   46s
 catalog-mysql-0            1/1     Running   0             46
