@@ -6,13 +6,16 @@ chapter: false
 pre: "<b> 1. </b>"
 ---
 
-### Tổng quan về Kubernetes
+### Kubernetes
+#### Tổng quan về Kubernetes
 
 Kubernetes là một nền tảng nguồn mở, có tính cơ động, có thể mở rộng để quản lý các ứng dụng được đóng gói và các service, giúp thuận lợi trong việc cấu hình và tự động hoá việc triển khai ứng dụng. Kubernetes là một hệ sinh thái lớn và phát triển nhanh chóng. Các dịch vụ, sự hỗ trợ và công cụ có sẵn rộng rãi.
 
 Tên gọi Kubernetes có nguồn gốc từ tiếng Hy Lạp, có ý nghĩa là người lái tàu hoặc hoa tiêu. Google mở mã nguồn Kubernetes từ năm 2014. Kubernetes xây dựng dựa trên một thập kỷ rưỡi kinh nghiệm mà Google có được với việc vận hành một khối lượng lớn workload trong thực tế, kết hợp với các ý tưởng và thực tiễn tốt nhất từ cộng đồng.
 
-### Bối cảnh lịch sử dẫn đến Kubernetes
+![Kubernetes](../../images/part1/kubernetes.webp?width=70pc)
+
+#### Bối cảnh lịch sử dẫn đến Kubernetes
 
 Chúng ta hãy xem tại sao Kubernetes rất hữu ích bằng cách quay ngược thời gian.
 
@@ -41,7 +44,7 @@ Các container đã trở nên phổ biến vì chúng có thêm nhiều lợi �
 - Cô lập các tài nguyên: dự đoán hiệu năng ứng dụng
 - Sử dụng tài nguyên: hiệu quả
 
-### Tại sao bạn cần Kubernetes và nó có thể làm những gì?
+#### Tại sao bạn cần Kubernetes và nó có thể làm những gì?
 Các container là một cách tốt để đóng gói và chạy các ứng dụng của bạn. Trong môi trường production, bạn cần quản lý các container chạy các ứng dụng và đảm bảo rằng không có khoảng thời gian downtime. Ví dụ, nếu một container bị tắt đi, một container khác cần phải khởi động lên. Điều này sẽ dễ dàng hơn nếu được xử lý bởi một hệ thống.
 
 Đó là cách Kubernetes đến với chúng ta. Kubernetes cung cấp cho bạn một framework để chạy các hệ phân tán một cách mạnh mẽ. Nó đảm nhiệm việc nhân rộng và chuyển đổi dự phòng cho ứng dụng của bạn, cung cấp các mẫu deployment và hơn thế nữa. Ví dụ, Kubernetes có thể dễ dàng quản lý một triển khai canary cho hệ thống của bạn.
@@ -67,7 +70,7 @@ Kubernetes cung cấp cho bạn:
     Kubernetes cho phép bạn lưu trữ và quản lý các thông tin nhạy cảm như: password, OAuth token và SSH key. Bạn có thể triển khai và cập nhật lại secret và cấu hình ứng dụng mà không cần build lại các container image và không để lộ secret trong cấu hình stack của bạn.
 
 
-### Kubernetes không phải là...
+#### Kubernetes không phải là...
 
 Kubernetes không phải là một hệ thống PaaS (Nền tảng như một Dịch vụ) truyền thống, toàn diện. Do Kubernetes hoạt động ở tầng container chứ không phải ở tầng phần cứng, nó cung cấp một số tính năng thường áp dụng chung cho các dịch vụ PaaS, như triển khai, nhân rộng, cân bằng tải, ghi nhật ký và giám sát. Tuy nhiên, Kubernetes không phải là cấu trúc nguyên khối và các giải pháp mặc định này là tùy chọn và có thể cắm được (pluggable).
 
@@ -85,3 +88,26 @@ Không cung cấp các service ở mức ứng dụng, như middleware (ví dụ
 - Cung cấp cũng như áp dụng bất kỳ cấu hình toàn diện, bảo trì, quản lý hoặc hệ thống tự phục hồi.
 
 Ngoài ra, Kubernetes cũng không phải một hệ thống điều phối đơn thuần. Trong thực tế, nó loại bỏ sự cần thiết của việc điều phối. Định nghĩa kỹ thuật của điều phối là việc thực thi một quy trình công việc được xác định: đầu tiên làm việc A, sau đó là B rồi sau chót là C. Ngược lại, Kubernetes bao gồm một tập các quy trình kiểm soát độc lập, có thể kết hợp, liên tục điều khiển trạng thái hiện tại theo trạng thái mong muốn đã cho. Nó không phải là vấn đề làm thế nào bạn có thể đi được từ A đến C. Kiểm soát tập trung cũng không bắt buộc. Điều này dẫn đến một hệ thống dễ sử dụng hơn, mạnh mẽ hơn, linh hoạt hơn và có thể mở rộng.
+
+### Amazon Elastic Kubernetes Service (EKS)
+Amazon Elastic Kubernetes Service (Amazon EKS) là một dịch vụ được quản lý giúp loại bỏ nhu cầu cài đặt, vận hành và bảo trì lớp điều khiển Kubernetes của riêng bạn trên Amazon Web Services (AWS).
+
+![EKS](../../images/part1/EKS.png?width=90pc)
+
+#### Các tính năng của Amazon EKS
+Sau đây là các tính năng chính của Amazon EKS:
+
+##### **Xây dựng mạng và xác thực an toàn**
+Amazon EKS tích hợp khối công việc của bạn trên Kubernetes với các dịch vụ mạng và bảo mật của AWS. Nó cũng tích hợp với AWS Identity and Access Management (IAM) để cung cấp xác thực cho các cụm Kubernetes của bạn.
+
+##### **Dễ dàng mở rộng cụm**
+Amazon EKS cho phép bạn dễ dàng chỉnh quy mô các cụm Kubernetes của mình lên và xuống dựa trên nhu cầu của khối lượng công việc của bạn. Amazon EKS hỗ trợ tự động mở rộng Pod theo chiều ngang dựa trên CPU hoặc số liệu tùy chỉnh và tự động mở rộng cụm dựa trên nhu cầu của toàn bộ khối lượng công việc.
+
+##### **Trải nghiệm Kubernetes được quản lý**
+Bạn có thể thực hiện các thay đổi đối với các cụm Kubernetes của mình bằng eksctl, AWS Management Console, AWS Command Line Interface (AWS CLI), API, kubectl và Terraform.
+
+##### **Tính khả dụng cao**
+Amazon EKS cung cấp tính khả dụng cao cho lớp điều khiển của bạn trên nhiều Vùng khả dụng.
+
+##### **Tích hợp với các dịch vụ AWS**
+Amazon EKS tích hợp với các dịch vụ AWS khác, cung cấp nền tảng toàn diện để triển khai và quản lý các ứng dụng được chứa trong container của bạn. Bạn cũng có thể dễ dàng khắc phục sự cố khối lượng công việc Kubernetes của mình hơn bằng nhiều công cụ quan sát khác nhau.
