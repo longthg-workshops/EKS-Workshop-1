@@ -27,7 +27,7 @@ Khi nhắc đến container runtime, người ta có thể nghĩ đến một da
 
 Với điều đó trong đầu, bạn có thể thấy rằng không gian container runtime khá phức tạp. Mỗi runtime bao gồm các phần khác nhau trên phổ bậc thấp-cao. Sau đây là một sơ đồ rất chủ quan:
 
-![CR level spectrum](/images/1/1/4/runtimes.png?width=50pc)
+![CR level spectrum](/EKS-Workshop-1/images/1/1/4/runtimes.png?width=50pc)
 
 Do đó, để phù hợp thực tế, các container runtime thật sự chỉ tập trung vào việc chạy container thường được gọi là "container runtime bậc thấp". Runtime hỗ trợ nhiều tính năng bậc cao hơn, như quản lý image và API gRPC/Web, thường được gọi là "công cụ container bậc cao", "container runtime bậc cao" hoặc thường chỉ là "container runtime". Phần này sẽ gọi chúng là "container runtime bậc cao". Điều quan trọng cần lưu ý là runtime bậc thấp và runtime bậc cao về cơ bản là những thứ khác nhau giải quyết các vấn đề khác nhau.
 
@@ -35,14 +35,14 @@ Thông thường, các nhà phát triển muốn chạy ứng dụng trong conta
 
 Các nhà phát triển triển khai runtime bậc thấp sẽ nói rằng các runtime bậc cao hơn như **`containerd`** và **cri-o** không thực sự là container runtime, vì theo họ, chúng "ủy thác" việc triển khai chạy container cho runc. Tuy nhiên, từ góc độ người dùng, chúng là như một thành phần duy nhất cung cấp khả năng chạy container.
 
-![CR levels relation](/images/1/1/4/runtime-architecture.png?width=50pc)
+![CR levels relation](/EKS-Workshop-1/images/1/1/4/runtime-architecture.png?width=50pc)
 
 ### Container runtimes trên Kubernetes
 Kubernetes runtime là container runtime bậc cao hỗ trợ Giao diện container runtime (CRI). CRI được giới thiệu trong Kubernetes 1.5 và hoạt động như một cầu nối giữa kubelet và container runtime. Container runtime bậc cao muốn tích hợp với Kubernetes được kỳ vọng sẽ triển khai CRI. Runtime được kỳ vọng sẽ xử lý việc quản lý image và hỗ trợ các pod Kubernetes, cũng như quản lý các container riêng lẻ và do đó, được coi là runtime bậc cao theo phân loại ở trên.
 
 Để hiểu thêm về CRI, chúng ta nên xem lại kiến ​​trúc Kubernetes tổng thể một lần nữa. Kubelet là một tác nhân nằm trên mỗi nút worker trong cụm Kubernetes. Kubelet chịu trách nhiệm quản lý khối lượng công việc container cho nút của nó. Khi thực sự chạy khối lượng công việc, kubelet sử dụng CRI để giao tiếp với container runtime đang chạy trên cùng một nút đó. Theo cách này, CRI chỉ đơn giản là một lớp trừu tượng hoặc API cho phép bạn chuyển đổi các triển khai container runtime thay vì tích hợp chúng vào kubelet.
 
-![KubeCR](/images/1/1/4/CRI.png?width=50pc)
+![KubeCR](/EKS-Workshop-1/images/1/1/4/CRI.png?width=50pc)
 
 Dưới đây là một số runtime dùng được trên Kubernetes:
 

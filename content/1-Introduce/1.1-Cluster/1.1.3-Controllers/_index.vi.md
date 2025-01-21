@@ -13,7 +13,7 @@ Dưới đây là một ví dụ về **vòng lặp điều khiển**: một b�
 
 Trong **Kubernetes**, các **controller** là các **vòng lặp điều khiển** quan sát trạng thái của cluster của bạn, sau đó thực hiện hoặc yêu cầu các thay đổi khi cần thiết. Mỗi **controller** cố gắng di chuyển trạng thái hiện tại của cluster gần hơn với trạng thái mong muốn.
 
-![Kubernetes Controller](/images/1/1/3/0002.png?featherlight=false&width=60pc)
+![Kubernetes Controller](/EKS-Workshop-1/images/1/1/3/0002.png?featherlight=false&width=60pc)
 
 ### **Mô hình Controller**
 - Một **controller** theo dõi ít nhất một loại tài nguyên Kubernetes. Những đối tượng này có một trường **spec** đại diện cho trạng thái mong muốn. Các **controller** cho tài nguyên đó chịu trách nhiệm làm cho trạng thái hiện tại gần hơn với trạng thái mong muốn.
@@ -62,7 +62,7 @@ _**Ví dụ:** Controller cho Jobs theo dõi các đối tượng Job (để ph�
 
 {{% notice note %}}
 Có thể có nhiều controller cùng tạo hoặc cập nhật chung một loại đối tượng. Thực tế, ở bên dưới, bộ điều khiển Kubernetes đảm bảo rằng chúng chỉ chú ý đến các tài nguyên được liên kết với tài nguyên điều khiển của chúng.\
-![Kubernetes Controllers](/images/1/1/3/0003.png?featherlight=false&width=60pc)
+![Kubernetes Controllers](/EKS-Workshop-1/images/1/1/3/0003.png?featherlight=false&width=60pc)
 Ví dụ, bạn có thể có Deployments và Jobs; cả hai đều tạo ra Pods. Bộ điều khiển Job không xóa các Pods mà Deployment của bạn đã tạo, vì có thông tin (nhãn) mà bộ điều khiển có thể sử dụng để phân biệt các Pods đó.
 {{% /notice %}}
 
