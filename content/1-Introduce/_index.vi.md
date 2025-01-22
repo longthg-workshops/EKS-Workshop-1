@@ -12,13 +12,13 @@ Kubernetes là một nền tảng nguồn mở, có tính cơ động, có thể
 
 Tên gọi Kubernetes có nguồn gốc từ tiếng Hy Lạp, có ý nghĩa là người lái tàu hoặc hoa tiêu. Google mở mã nguồn Kubernetes từ năm 2014. Kubernetes xây dựng dựa trên một thập kỷ rưỡi kinh nghiệm mà Google có được với việc vận hành một khối lượng lớn workload trong thực tế, kết hợp với các ý tưởng và thực tiễn tốt nhất từ cộng đồng.
 
-![Kubernetes](/images/1/kubernetes.webp?width=70pc)
+![Kubernetes](/EKS-Workshop-1/images/1/kubernetes.webp?width=70pc)
 
 #### Bối cảnh lịch sử dẫn đến Kubernetes
 
 Chúng ta hãy xem tại sao Kubernetes rất hữu ích bằng cách quay ngược thời gian.
 
-![Lịch sử các hình thức triển khai ứng dụng](/images/1/00010.svg?featherlight=false&width=60pc)
+![Lịch sử các hình thức triển khai ứng dụng](/EKS-Workshop-1/images/1/00010.svg?featherlight=false&width=60pc)
 
 **Thời đại triển khai theo cách truyền thống:** Ban đầu, các ứng dụng được chạy trên các máy chủ vật lý. Không có cách nào để xác định ranh giới tài nguyên cho các ứng dụng trong máy chủ vật lý và điều này gây ra sự cố phân bổ tài nguyên. Ví dụ, nếu nhiều ứng dụng cùng chạy trên một máy chủ vật lý, có thể có những trường hợp một ứng dụng sẽ chiếm phần lớn tài nguyên hơn và kết quả là các ứng dụng khác sẽ hoạt động kém đi. Một giải pháp cho điều này sẽ là chạy từng ứng dụng trên một máy chủ vật lý khác nhau. Nhưng giải pháp này không tối ưu vì tài nguyên không được sử dụng đúng mức và rất tốn kém cho các tổ chức để có thể duy trì nhiều máy chủ vật lý như vậy.
 
@@ -91,7 +91,7 @@ Ngoài ra, Kubernetes cũng không phải một hệ thống điều phối đơ
 ### Amazon Elastic Kubernetes Service (EKS)
 Amazon Elastic Kubernetes Service (Amazon EKS) là một dịch vụ được quản lý giúp loại bỏ nhu cầu cài đặt, vận hành và bảo trì lớp điều khiển Kubernetes của riêng bạn trên Amazon Web Services (AWS).
 
-![EKS](/images/1/EKS.png?width=90pc)
+![EKS](/EKS-Workshop-1/images/1/EKS.png?width=90pc)
 
 #### Các tính năng của Amazon EKS
 Sau đây là các tính năng chính của Amazon EKS:

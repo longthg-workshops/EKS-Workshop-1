@@ -12,4 +12,4 @@ After cleaning up the cluster, run the following command to remove the IDE stack
 aws cloudformation delete-stack --stack-name eks-workshop-ide
 ```
 
-![](/images/6/DeleteStack.png?width=90pc)
+![](/EKS-Workshop-1/images/6/DeleteStack.png?width=90pc)

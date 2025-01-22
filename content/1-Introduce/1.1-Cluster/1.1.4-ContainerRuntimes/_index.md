@@ -27,7 +27,7 @@ Talking of container runtimes, a list of examples might come to mind: runc, lxc,
 
 With that in mind you can see that the container runtime space is fairly complicated. Each runtime covers different parts of this low-level to high-level spectrum. Here is a very subjective diagram:
 
-![CR level spectrum](/images/1/1/4/runtimes.png?width=50pc)
+![CR level spectrum](/EKS-Workshop-1/images/1/1/4/runtimes.png?width=50pc)
 
 Therefore, for practical purposes, actual container runtimes that focus on just running containers are usually referred to as “low-level container runtimes”. Runtimes that support more high-level features, like image management and gRPC/Web APIs, are usually referred to as “high-level container tools”, “high-level container runtimes” or usually just “container runtimes”. This section will refer to them as “high-level container runtimes”. It’s important to note that low-level runtimes and high-level runtimes are fundamentally different things that solve different problems.
 
@@ -35,14 +35,14 @@ Typically, developers who want to run apps in containers will need more than jus
 
 Developers who implement low-level runtimes will say that higher level runtimes like `containerd` and cri-o are not actually container runtimes, as from their perspective they outsource the implementation of running a container to runc. However, from the user’s perspective, they are a singular component that provides the ability to run containers.
 
-![CR levels relation](/images/1/1/4/runtime-architecture.png?width=50pc)
+![CR levels relation](/EKS-Workshop-1/images/1/1/4/runtime-architecture.png?width=50pc)
 
 ### Kubernetes container runtimes
 Kubernetes runtimes are high-level container runtimes that support the Container Runtime Interface (CRI). CRI was introduced in Kubernetes 1.5 and acts as a bridge between the kubelet and the container runtime. High-level container runtimes that want to integrate with Kubernetes are expected to implement CRI. The runtime is expected to handle the management of images and to support Kubernetes pods, as well as manage the individual containers, and therefore, is considered a high-level runtime by the categorisation above.
 
 In order to understand more about CRI it’s worth taking once more look at the overall Kubernetes architecture. The kubelet is an agent that sits on each worker node in the Kubernetes cluster. The kubelet is responsible for managing the container workloads for its node. When it comes to actually run the workload, the kubelet uses CRI to communicate with the container runtime running on that same node. In this way CRI is simply an abstraction layer or API that allows you to switch out container runtime implementations instead of having them built into the kubelet.
 
-![KubeCR](/images/1/1/4/CRI.png?width=50pc)
+![KubeCR](/EKS-Workshop-1/images/1/1/4/CRI.png?width=50pc)
 
 Below are some CRI runtimes that can be used with Kubernetes:
 
