@@ -11,3 +11,5 @@ Sau khi thực hiện xong bước trên, chạy lệnh sau trên giao diện d�
 ```bash
 aws cloudformation delete-stack --stack-name eks-workshop-ide
 ```
+
+![](/EKS-Workshop-1/images/7/DeleteStack.png?width=90pc)
